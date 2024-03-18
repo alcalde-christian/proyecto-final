@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Conexión con .css -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Título de la página en pestañas -->
+    <title>AA - Estudio técnico de arquitectura</title>
+    <!-- Ícono de la página -->
+    <link rel="icon" type="image/png" href="../img/star.ico">
+</head>
+<body>
+    <header>
+        <!-- NavBar con logo, texto y link a los distintos HTML de la página -->
+        <nav class="navBar-container"> <!-- Pre2: se agregó una clase a la NavBar para mejor identificación -->
+
+            <div class="navTitle">
+                <!-- Logo del Navbar -->
+                <img src="../img/logotop.png" alt="logo" class="logo">
+                <!-- Título del Navbar -->
+                <h1 class="title">ESTUDIO TÉCNICO DE ARQUITECTURA</h1>
+                <!-- Título del Navbar (sólo versión mobile) -->
+                <h1 class="mobile">e.t.<span class="detail">arquitectura</span>_</h1>
+            </div>
+
+            <!-- Tabla desordenada para agregar los distintos links relativos -->
+            <ul class="navLinks"> 
+                <li>
+                    <!-- Estilo en línea. Ver "apuntes" línea 1 -->
+                    <a class="navLinks-items highlight" href="../index.html">
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/nosotros.html" style="text-decoration: underline;">
+                        NOSOTROS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/servicios.html">
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/proyectos.html">
+                        PROYECTOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/contacto.html">
+                        CONTACTO
+                    </a>
+                </li>
+            </ul>
+            <!-- Menú hamburguesa (sólo versiones tablet y mobile) -->
+            <div class="hamburger">
+                <p>
+                    &#9776
+                </p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Etiqueta <span> para cambiar el color del guión bajo -->
+        <h2 class="pageTitle"> <!-- Pre2: nueva clase para los títulos de cada página -->
+            NOSOTROS<span class="detail">_</span>
+        </h2>
+
+        <!-- Imagen principal de este html -->
+        <img src="../img/us2.jpg" alt="Acerca de nosotros" class="us-main-photo">
+
+        <!-- Cuerpo de la página. Pre2: se incorporó <section> -->
+        <!-- <section> contenedora para organizar los ítems -->
+        <section class="us-descript-container">
+            <img src="../img/team.jpg" alt="Equipo de trabajo" class="us-descript-photo">
+            <div class="us-descript-item">
+                <p> <!-- Pre2: se cambiaron <br> por varios <p> -->
+                    Nos dedicamos a transformar ideas en realidades arquitectónicas inspiradoras. Con una pasión por el diseño innovador y una dedicación a la excelencia en cada proyecto, nos esforzamos por superar las expectativas de nuestros clientes y dejar una marca duradera en el paisaje urbano.
+                </p>
+                <p>
+                    Nuestro enfoque integral abarca todas las facetas del diseño arquitectónico y la gestión de proyectos, desde la concepción inicial hasta la finalización de la construcción. Con una combinación de creatividad, experiencia y atención al detalle, abordamos cada desafío con entusiasmo y determinación, trabajando en estrecha colaboración con nuestros clientes para crear soluciones personalizadas y orientadas al futuro.
+                </p>
+                <p>
+                    En nuestro estudio, valoramos la innovación, la sostenibilidad y el compromiso con la comunidad. Nos esforzamos por integrar prácticas de construcción sostenible en todos nuestros proyectos, minimizando nuestro impacto en el medio ambiente y promoviendo la responsabilidad social en nuestra industria. Creemos en el poder del diseño para enriquecer vidas, mejorar comunidades y transformar el mundo que nos rodea.
+                </p>
+                <p>
+                    Nuestro equipo está formado por arquitectos apasionados, diseñadores creativos y profesionales de gestión de proyectos altamente capacitados, todos comprometidos con la excelencia en todo lo que hacemos. Con una combinación de talento, experiencia y visión, estamos listos para enfrentar cualquier desafío y llevar tus sueños arquitectónicos a la vida.
+                </p>
+                <p>
+                    Ya sea que estés planeando construir una residencia familiar, desarrollar un complejo comercial o revitalizar un vecindario entero, estamos aquí para ayudarte a hacer realidad tu visión. Nos enorgullece ofrecer servicios de clase mundial y resultados excepcionales que reflejan nuestro compromiso con la excelencia y la innovación en la arquitectura.
+                </p>
+                <p>
+                    Únete a nosotros en este emocionante viaje hacia el futuro del diseño arquitectónico. Juntos, podemos crear un mundo más hermoso, sostenible y significativo para las generaciones venideras.
+                </p>
+            </div>
+        </section>
+        <!-- <section> contenedora para organizar los ítems -->
+        <section class="us-info-container">
+            <div class="us-info-list">
+                <!-- Pre2: se reemplazó la tabla desordenada por <div> para ordenar los elementos mediante Flex Box -->
+                <div class="us-info-item">
+                    <p>
+                        Sarmiento 1664, San Miguel (1663), Buenos Aires, Argentina
+                    </p>
+                    <img src="../img/location.jpg" alt="Dirección" class="info">
+                </div>
+                <div class="us-info-item">
+                    <p>
+                        correogenerico@hotmail.com
+                    </p>
+                    <img src="../img/mail2.png" alt="Correo electrónico" class="info">
+                </div>
+                <div class="us-info-item">
+                    <p>
+                        +54 9 11 4023 5538
+                    </p>
+                    <img src="../img/WPLogo.jpg" alt="Teléfono de contacto" class="info">
+                </div>
+                <div class="us-info-item">
+                    <p>
+                        Lunes a viernes de 14 hs a 18 hs
+                    </p>
+                    <img src="../img/watch.jpg" alt="Horario" class="info">
+                </div>
+            </div>
+            <div class="us-info-map">
+                <!-- Mapa incorporado haciendo referencia al domicilio de la empresa -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.446063764666!2d-58.71622922339461!3d-34.54225975425655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd12a5db5b2b%3A0x6df5d6e7adc6f67!2sEDN%2C%20Domingo%20Faustino%20Sarmiento%201664%2C%20B1663%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1708758239304!5m2!1ses-419!2sar" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <!-- Footer a las distintas redes sociales -->
+    <footer>
+        <section class="footer-container">
+            <div class="footer-item fb">
+                <a href="https://www.facebook.com" target="_blank" class="footerSocial">
+                    <img src="../img/FBLogo.png" alt="Link Facebook" class="footer-social">
+                </a>
+            </div>
+            <div class="footer-item ig">
+                <a href="https://www.instagram.com" target="_blank" class="footerSocial">
+                    <img src="../img/IGLogo.png" alt="Link Instagram" class="footer-social"> 
+                </a>
+            </div>
+            <div class="footer-item in">
+                <a href="https://www.linkedin.com" target="_blank" class="footerSocial">
+                    <img src="../img/INLogo.png" alt="Link LinkedIn" class="footer-social">
+                </a>
+            </div>
+            <div class="footer-item contact">
+                <!-- Ícono que nos dirige a la página de "contacto" -->
+                <a href="../pages/contacto.html">
+                    <!-- Ícono importado a través de Font Awesome -->
+                    <i class="fa-solid fa-envelope fa-bounce fa-2xl" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        <p class="copyright">
+            ® 2024 - Christian Alcalde. Todos los derechos reservados
+        </p>
+        </section>
+    </footer>
+    <!-- Script de Font Awesome -->
+    <script src="https://kit.fontawesome.com/31d4edc7b8.js" crossorigin="anonymous"></script>
+</body>
+</html>

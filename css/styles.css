@@ -1,0 +1,705 @@
+/*-----------------------------------------------------------------*/
+/* ESTILOS GENERALES ----------------------------------------------*/
+
+/* Selector universal. Pre2 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Se aplica font-family: "anta" a todo el proyecto. Con html {} lo pisaba Bootstrap */
+    font-family: "anta";
+}
+
+/* Para resaltar el fondo de los links al pasar el ratón sobre ellos */
+.highlight:hover { /* Pre2: Se crea la clase "highlight" para excluir las etiquetas <a> del footer */
+    background-color: #ff8c00;
+    transition: background-color 0.5s ease;
+}
+
+/* Fuentes utilizadas en el proyecto */
+@font-face {
+    font-family: "anta";
+    src: url(../fonts/Anta/Anta-Regular.ttf);
+}
+@font-face {
+    font-family: "cantarell";
+    src: url(../fonts/Cantarell/Cantarell-Regular.ttf);
+}
+
+/*-----------------------------------------------------------------*/
+/* ESTILOS PARA BARRA DE NAVEGACIÓN -------------------------------*/
+
+
+/* Altura para el header pre-establecida para evitar errores de visualización */
+header {
+    height: 100px;
+}
+
+/* Oculta el <h1> que se mostrará sólo en versiones mobile */
+.mobile {
+    display: none;
+}
+
+/* Oculta el menú hamburguesa que se mostrará sólo en mobile / tablet */
+.hamburger {
+    display: none;
+}
+
+.navBar-container {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Para asegurarse que el header siempre se mantenga visible */
+    z-index: 2 !important; 
+}
+
+.navTitle {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    /* Margin: 0 para pisar el valor que le asigna Bootstrap */
+    margin: 0;
+    /* Elimina viñetas en NavBar */
+    list-style: none;
+}
+
+/* Tamaño del logo en NavBar */
+.logo {
+    width: 100px;
+}
+
+/* Estilos para el título, pisando los asignados por Bootstrap */
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Elimina subrayado en enlaces de NavBar, establece separación y color */
+.navLinks-items {
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+    margin: 0px 1rem;
+}
+
+/* Para evitar que los enlaces cambien de color luego de haber sido clickeados */
+a:visited {
+    color: black;
+}
+
+/*-----------------------------------------------------------------*/
+/* ESTILOS PARA EL CUERPO DE LAS PÁGINAS ------------------------- */
+
+/* Detalle en naranja para donde se necesite aplicar mediante etiqueta <span> */
+.detail {
+    color: #ff8c00;
+}
+
+/* Espaciado para los títulos de las páginas */
+.pageTitle {
+    padding: 0px 0px 10px 30px;
+    /* background:linear-gradient(to bottom,#ffffff,#d3d3d3); INOP (descartado por el momento) */
+}
+
+/* Fuente para todas las etiquetas <p> */
+p {
+    font-family: "cantarell";
+}
+
+    /* index.html */
+        /* Para que el carousel no cambie su tamaño según la imagen */
+        .carousel-item img {
+            height: 90vh;
+            object-fit: cover;
+        }
+
+        .services-container { /* Atributos del Flex Container de index.html. Falta chequear comportamiento responsivo y márgenes */
+            display: flex;
+            /* Se eliminó justify-content: space-between para mantener centradas las imágenes durante el wrap. Se reemplazó con justify-content:center + padding: 0px 50px; */
+            /* justify-content: space-between; */
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 50px;
+        }
+
+        .services-item {
+            text-align: center;
+            padding: 0px 50px;
+        }
+
+        /* Separación de la imagen respecto del texto */
+        .services-item a img {
+            /* Padding para utilizar :hover {transition} */
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Efecto que "subraya" las imágenes cuando pasa el mouse sobre ellas */
+        .services-item img:hover {
+            background-color: #ff8c00;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Estilos del texto que se encuentra debajo de las imágenes de los servicios ofrecidos */
+        .services-item h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+    /* nosotros.html */
+        /* Flex Box para organizar el contenido de la página (mejorar): */
+            /* Mejorar: colores de los íconos, ubicación de las etiquetas <p>, comportamiento responsivo */
+        .us-descript-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .us-descript-item {
+            margin: 25px 10px 25px 0px;
+        }
+
+        .us-info-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 100px;
+            gap: 50px;
+        }
+
+        .us-info-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .us-info-item {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            gap: 25px;
+            margin: 15px;
+        }
+
+    /* servicios.html */
+        /* Espaciado para los títulos de los servicios ofrecidos (únicos <h3> en todo el proyecto) */
+        h3 {
+            padding-bottom: 20px;
+        }
+
+        /* Se aplica Grid para organizar los distintos servicios */
+        /* Grid general contenedor de 3 grids más pequeños (1x3) */
+        .servicesGrid-container {
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(3,1fr);
+            /* Espaciado entre los distintos servicios */
+            row-gap: 100px;
+            /* Margen superior */
+            margin-top: 25px;
+            /* Margen inferior */
+            margin-bottom: 50px;
+        }
+
+        /* Disposición de Grids más pequeños (6x4 c/u) */
+        .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+
+        /* Media query para mantener el aspecto en desktop grandes */
+        @media screen and (min-width:1501px) {
+            .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
+                grid-template-columns: 2fr repeat(4,1fr) 2fr;
+            }
+        }
+
+        /* Media query para mantener el aspecto en desktop pequeños */
+        @media screen and (max-width:1024px) {
+            .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
+                grid-template-columns: 0.5fr repeat(4,1fr) 0.5fr;
+            }
+        }
+
+            /* Sub-grid para Diseño Exterior */
+            .servicesGrid-Ext {
+                height: 50vh;
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            /* Sub-grid para Diseño Interior */
+            .servicesGrid-Int {
+                height: 50vh;
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            /* Sub-grid para Gestión de Proyectos */
+            .servicesGrid-Ges {
+                height: 50vh;
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+
+        /* Ajuste de estilos para las imágenes dentro de Grid */
+        .servicesGrid-Ext-img img {
+            height: 100%;
+            width: 100%;
+            border: 3px solid #ff8c00;
+            border-radius: 100px;
+            border-right: none;
+        }
+
+        .servicesGrid-Int-img img {
+            height: 100%;
+            width: 100%;
+            border: 3px solid #ff8c00;
+            border-radius: 100px;
+            border-left: none;
+        }
+
+        .servicesGrid-Ges-img img {
+            height: 100%;
+            width: 100%;
+            border: 3px solid #ff8c00;
+            border-radius: 100px;
+            border-right: none;
+        }
+
+        /* Ubicación de Diseño Exterior */
+        .servicesGrid-Ext-img {
+            grid-column: 2/5;
+            grid-row: 1/5;
+        }
+
+        .servicesGrid-Ext-text {
+            text-align: right;
+            background-color: white;
+            border-radius: 50px;
+            opacity: 85%;
+            grid-column: 4/6;
+            grid-row: 2/4;
+        }
+        /* Fin de ubicación de Diseño Exterior */
+
+        /* Ubicación de Diseño Interior */
+        .servicesGrid-Int-img {
+            grid-column: 3/6;
+            grid-row: 1/5;
+        }
+
+        .servicesGrid-Int-text {
+            text-align: left;
+            background-color: white;
+            border-radius: 50px;
+            opacity: 85%;
+            grid-column: 2/4;
+            grid-row: 2/4;
+        }
+        /* Fin de ubicación de Diseño Interior */
+
+        /* Ubicación de Gestión de Proyectos */
+        .servicesGrid-Ges-img {
+            grid-column: 2/5;
+            grid-row: 1/5;
+        }
+
+        .servicesGrid-Ges-text {
+            text-align: right;
+            background-color: white;
+            border-radius: 50px;
+            opacity: 85%;
+            grid-column: 4/6;
+            grid-row: 2/4;
+        }
+        /* Fin de ubicación de Gestión de Proyectos */
+
+    /* proyectos.html */
+        /* Grid para contener las imágenes de los proyectos */
+        .project-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,1fr);
+            gap: 10px;
+            padding: 25px 50px;
+        }
+
+        /* Ajuste del tamaño de las imágenes */
+        .project-grid-item {
+            width: 100%;
+            height: 100%;
+            /*border-radius: 10px; INOP (descartado por el momento) */
+        }
+
+        /* Efecto de claridad y aumento de tamaño al pasar el mouse por sobre las imágenes */
+        .project-grid-item:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Asignación de posiciones para las imágenes */
+        .one {
+            grid-column: 1/3;
+            grid-row: 1/3;
+        }
+
+        .two {
+            grid-column: 3/4;
+            grid-row: 1/2;
+        }
+
+        .three {
+            grid-column: 3/4;
+            grid-row: 2/3;
+        }
+
+        .four {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+
+        .five {
+            grid-column: 2/3;
+            grid-row: 3/4;
+        }
+
+        .six {
+            grid-column: 3/4;
+            grid-row: 3/4;
+        }
+
+        .seven {
+            grid-column: 2/4;
+            grid-row: 4/6;
+        }
+
+        .eight {
+            grid-column: 1/2;
+            grid-row: 5/6;
+        }
+
+        .nine {
+            grid-column: 1/2;
+            grid-row: 4/5;
+        }
+        /* Fin de asignación de ubicación para las imágenes */
+
+    /* contacto.html */
+        input {
+            font-family: "cantarell";
+        }
+    
+        textarea {
+            font-family: "cantarell";
+        }
+
+
+
+/*-----------------------------------------------------------------*/
+/* ESTILOS PARA EL FOOTER ---------------------------------------- */
+
+/* Color degradado del footer */
+footer {
+    background: linear-gradient(to bottom,#ffffff,#ff8c00); 
+}
+
+/* Display: grid para organizar los elementos del footer */
+.footer-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+/* Asignación de posiciones de los elementos */
+.fb {
+    text-align: right;
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.ig {
+    text-align: center;
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+
+.in {
+    text-align: left;
+    grid-column: 6/7;
+    grid-row: 1/2;
+}
+
+.contact {
+    text-align: right;
+    grid-column: 9/10;
+    grid-row: 2/3;
+    /* Espaciado del borde inferior derecho */
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.copyright {
+    text-align: center;
+    grid-column: 4/7;
+    grid-row: 2/3;
+}
+/* Fin de asignación de posiciones de los elementos */
+
+/* Tamaño de los íconos de redes sociales */
+.footer-social {
+    width: 30px;
+}
+
+/* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
+.footer-social:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+    transition: transform 0.3 ease;
+}
+
+.copyright {
+    font-size: 11px;
+    margin-bottom: 0;
+}
+
+/*-----------------------------------------------------------------*/
+/* ESTILOS PARA LAS IMÁGENES --------------------------------------*/
+
+/* index.html */
+    /* Servicios */
+        .main-services {
+            width: 100%;
+            height: 250px; /* Altura limitada a 200px. Falta chequear comportamiento responsive */
+        }
+
+/* nosotros.html */
+    /* Principal */
+        .us-main-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+    /* Equipo */
+        .us-descript-photo {
+            width: 25%;
+            padding: 25px;
+            border: 5px solid #ff8c00;
+            /* border-radius: 10px; INOP (descartado por el momento) */
+            margin: 25px 50px;
+        }
+
+    /* Íconos */
+        .info {
+            width: 50px;
+        }
+
+/* servicios.html */
+    .serv {
+        width: 500px;
+    }
+
+/*-----------------------------------------------------------------*/
+/* MEDIA QUERIES | CELULARES --------------------------------------*/
+
+@media only screen and (max-width:480px) {
+
+    /* BARRA DE NAVEGACIÓN */
+    header {
+        height: 50px;
+    }
+    
+    .navBar-container img {
+        display: none;
+    }
+    
+    .title {
+        display: none;
+    }
+
+    nav ul li a {
+        display: none;
+    }
+
+    .navBar-container {
+        height: 50px;
+    }
+
+    .mobile {
+        display: block;
+        margin-left: 25px;
+    }
+
+    .hamburger {
+        color: black;
+        display: flex;
+        align-items: center;
+        margin: 10px 15px 5px 10px;
+        padding: 0px 20px;
+        border-radius: 8px;
+        cursor: pointer; /* Podría eliminarse al no haber puntero en celulares */
+    }
+
+    .hamburger p {
+        font-weight: bolder;
+    }
+
+    /* CUERPO DE LAS PÁGINAS */
+
+        /* proyectos.html */
+        .project-grid-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(9,1fr);
+            padding: 0 10px;
+        }
+
+        .one {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        .two {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
+        .three {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+
+        .four {
+            grid-column: 1/2;
+            grid-row: 4/5;
+        }
+
+        .five {
+            grid-column: 1/2;
+            grid-row: 5/6;
+        }
+
+        .six {
+            grid-column: 1/2;
+            grid-row: 6/7;
+        }
+
+        .seven {
+            grid-column: 1/2;
+            grid-row: 7/8;
+        }
+
+        .eight {
+            grid-column: 1/2;
+            grid-row: 8/9;
+        }
+
+        .nine {
+            grid-column: 1/2;
+            grid-row: 9/10;
+        }
+}
+
+/*-----------------------------------------------------------------*/
+/* MEDIA QUERIES | TABLETS   --------------------------------------*/
+
+@media only screen and (max-width:855px) and (min-width:481px) {
+/* 855px es el ancho mínimo que soporta la NavBar manteniendo todos los links visibles */
+
+    /* BARRA DE NAVEGACIÓN */
+    header {
+        height: 75px;
+    }
+    
+    .navBar-container {
+        height: 75px;
+    }
+
+    .navBar-container img {
+        height: 75px;
+        width: 75px;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        display: none;
+    }
+
+    .hamburger {
+        color: #ff8c00;
+        display: flex;
+        align-items: center;
+        margin: 10px 15px;
+        padding: 0px 20px;
+        border-radius: 8px;
+        cursor: pointer; /* Podría eliminarse al no haber puntero en tablets */
+    }
+
+    .hamburger p {
+        font-weight: bolder;
+    }
+
+    /* CUERPO DE LAS PÁGINAS */
+
+        /* proyectos.html */
+        .project-grid-container {
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(9,1fr);
+        }
+
+        .one {
+            grid-column: 1/5;
+            grid-row: 1/3;
+        }
+
+        .two {
+            grid-column: 1/3;
+            grid-row: 3/4;
+        }
+
+        .three {
+            grid-column: 3/5;
+            grid-row: 3/4;
+        }
+
+        .four {
+            grid-column: 1/5;
+            grid-row: 4/6;
+        }
+
+        .five {
+            grid-column: 1/3;
+            grid-row: 6/7;
+        }
+
+        .six {
+            grid-column: 3/5;
+            grid-row: 6/7;
+        }
+
+        .seven {
+            grid-column: 1/5;
+            grid-row: 7/9;
+        }
+
+        .eight {
+            grid-column: 1/3;
+            grid-row: 9/10;
+        }
+
+        .nine {
+            grid-column: 3/5;
+            grid-row: 9/10;
+        }
+}

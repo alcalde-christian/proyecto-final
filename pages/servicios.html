@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Conexión con .css -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Título de la página en pestañas -->
+    <title>AA - Estudio técnico de arquitectura</title>
+    <!-- Ícono de la página -->
+    <link rel="icon" type="image/png" href="../img/star.ico">
+</head>
+<body>
+    <header>
+        <!-- NavBar con logo, texto y link a los distintos HTML de la página -->
+        <nav class="navBar-container"> <!-- Pre2: se agregó una clase a la NavBar para mejor identificación -->
+
+            <div class="navTitle">
+                <!-- Logo del Navbar -->
+                <img src="../img/logotop.png" alt="logo" class="logo">
+                <!-- Título del Navbar -->
+                <h1 class="title">ESTUDIO TÉCNICO DE ARQUITECTURA</h1>
+                <!-- Título del Navbar (sólo versión mobile) -->
+                <h1 class="mobile">e.t.<span class="detail">arquitectura</span>_</h1>
+            </div>
+
+            <!-- Tabla desordenada para agregar los distintos links relativos -->
+            <ul class="navLinks"> 
+                <li>
+                    <!-- Estilo en línea. Ver "apuntes" línea 1 -->
+                    <a class="navLinks-items highlight" href="../index.html">
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/nosotros.html">
+                        NOSOTROS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/servicios.html" style="text-decoration: underline;">
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/proyectos.html">
+                        PROYECTOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/contacto.html">
+                        CONTACTO
+                    </a>
+                </li>
+            </ul>
+            <!-- Menú hamburguesa (sólo versiones tablet y mobile) -->
+            <div class="hamburger">
+                <p>
+                    &#9776
+                </p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Etiqueta <span> para cambiar el color del guión bajo -->
+        <h2 class="pageTitle"> <!-- Pre2: nueva clase para los títulos de cada página -->
+            SERVICIOS<span class="detail">_</span>
+        </h2>
+
+        <!-- Cuerpo de este html. Quizás incorporar <section> para aplicar Flexbox -->
+        <!-- Cada imagen tiene ID para redirigir al usuario desde las imágenes en index.html -->
+        <section class="servicesGrid-container" id="Exterior">
+            <section class="servicesGrid-Ext">
+                <div class="servicesGrid-Ext-img">
+                    <img src="../img/servExt.jpg" alt="Diseño exterior" class="serv">
+                </div>
+                <div class="servicesGrid-Ext-text">
+                    <h3>
+                        DISEÑO EXTERIOR
+                    </h3>
+                    <p>
+                        Transformamos ideas en espacios que inspiran.
+                    </p>
+                    <p>
+                        Desde viviendas familiares hasta complejos urbanos, nuestro equipo de arquitectos trabaja para crear diseños innovadores que reflejen la visión única de cada cliente.
+                    </p>
+                </div>
+            </section>
+            <section class="servicesGrid-Int"  id="Interior">
+                <div class="servicesGrid-Int-img">
+                    <img src="../img/servInt.jpg" alt="Diseño interior" class="serv">
+                </div>
+                <div class="servicesGrid-Int-text">
+                    <h3>
+                        DISEÑO INTERIOR
+                    </h3>
+                    <p>
+                        Cada detalle importa en la creación de espacios interiores que cautivan los sentidos.
+                    </p>
+                    <p>
+                        Desde la distribución del espacio hasta la selección de acabados y mobiliario, nuestro equipo de diseñadores de interiores se dedica a crear ambientes que reflejen la personalidad y el estilo de nuestros clientes.
+                    </p>
+                </div>
+            </section>
+            <section class="servicesGrid-Ges" id="Gestion">
+                <div class="servicesGrid-Ges-img">
+                    <img src="../img/servGes.jpg" alt="Gestión de proyectos" class="serv">
+                </div>
+                <div class="servicesGrid-Ges-text">
+                    <h3>
+                        GESTIÓN DE PROYECTOS
+                    </h3>
+                    <p>
+                        De la concepción a la realidad, nos encargamos de cada etapa del proceso.
+                    </p>
+                    <p>
+                        Nuestra sólida gestión de proyectos garantiza que cada proyecto se complete a tiempo, dentro del presupuesto y con la más alta calidad, mientras mantenemos una comunicación transparente y una atención meticulosa a los detalles.
+                    </p>
+                </div>
+            </section>
+        </section>
+    </main>
+    <!-- Footer a las distintas redes sociales -->
+    <footer>
+        <section class="footer-container">
+            <div class="footer-item fb">
+                <a href="https://www.facebook.com" target="_blank" class="footerSocial">
+                    <img src="../img/FBLogo.png" alt="Link Facebook" class="footer-social">
+                </a>
+            </div>
+            <div class="footer-item ig">
+                <a href="https://www.instagram.com" target="_blank" class="footerSocial">
+                    <img src="../img/IGLogo.png" alt="Link Instagram" class="footer-social"> 
+                </a>
+            </div>
+            <div class="footer-item in">
+                <a href="https://www.linkedin.com" target="_blank" class="footerSocial">
+                    <img src="../img/INLogo.png" alt="Link LinkedIn" class="footer-social">
+                </a>
+            </div>
+            <div class="footer-item contact">
+                <!-- Ícono que nos dirige a la página de "contacto" -->
+                <a href="../pages/contacto.html">
+                    <!-- Ícono importado a través de Font Awesome -->
+                    <i class="fa-solid fa-envelope fa-bounce fa-2xl" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        <p class="copyright">
+            ® 2024 - Christian Alcalde. Todos los derechos reservados
+        </p>
+        </section>
+    </footer>
+    <!-- Script de Font Awesome -->
+    <script src="https://kit.fontawesome.com/31d4edc7b8.js" crossorigin="anonymous"></script>
+</body>
+</html>

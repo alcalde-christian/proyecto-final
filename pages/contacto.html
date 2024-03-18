@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Conexión con .css -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Título de la página en pestañas -->
+    <title>AA - Estudio técnico de arquitectura</title>
+    <!-- Ícono de la página -->
+    <link rel="icon" type="image/png" href="../img/star.ico">
+</head>
+<body>
+    <header>
+        <!-- NavBar con logo, texto y link a los distintos HTML de la página -->
+        <nav class="navBar-container"> <!-- Pre2: se agregó una clase a la NavBar para mejor identificación -->
+
+            <div class="navTitle">
+                <!-- Logo del Navbar -->
+                <img src="../img/logotop.png" alt="logo" class="logo">
+                <!-- Título del Navbar -->
+                <h1 class="title">ESTUDIO TÉCNICO DE ARQUITECTURA</h1>
+                <!-- Título del Navbar (sólo versión mobile) -->
+                <h1 class="mobile">e.t.<span class="detail">arquitectura</span>_</h1>
+            </div>
+
+            <!-- Tabla desordenada para agregar los distintos links relativos -->
+            <ul class="navLinks"> 
+                <li>
+                    <!-- Estilo en línea. Ver "apuntes" línea 1 -->
+                    <a class="navLinks-items highlight" href="../index.html">
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/nosotros.html">
+                        NOSOTROS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/servicios.html">
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/proyectos.html">
+                        PROYECTOS
+                    </a>
+                </li>
+                <li>
+                    <a class="navLinks-items highlight" href="../pages/contacto.html" style="text-decoration: underline;">
+                        CONTACTO
+                    </a>
+                </li>
+            </ul>
+            <!-- Menú hamburguesa (sólo versiones tablet y mobile) -->
+            <div class="hamburger">
+                <p>
+                    &#9776
+                </p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Etiqueta <span> para cambiar el color del guión bajo -->
+        <h2 class="pageTitle"> <!-- Pre2: nueva clase para los títulos de cada página -->
+            CONTACTO<span class="detail">_</span>
+        </h2>
+
+        <!-- Formulario de contacto (FALTA ENLAZAR AL MAIL)-->
+        <!-- Botón de "enviar" da error -->
+        <form action="../forms/form.php" Method="POST">
+            <ul class="contact-form">
+                <li>
+                    <label for="name">Nombre y apellido</label>
+                </li>
+                <li>
+                    <input type="text" name="name" id="name">
+                </li>
+                <li>
+                    <label for="email">e-mail</label>
+                </li>
+                <li>
+                    <input type="email" name="email" id="email">
+                </li>
+                <li>
+                    <label for="phone">Número de teléfono</label>
+                </li>
+                <li>
+                    <input type="text" name="phone" id="phone">
+                </li>
+                <li>
+                    <label for="text">Consulta</label>
+                </li>
+                <li>
+                    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                </li>
+                <li>
+                    <input type="submit" value="Enviar">
+                </li>
+            </ul>
+        </form>
+    </main>
+    <!-- Footer a las distintas redes sociales -->
+    <footer>
+        <section class="footer-container">
+            <div class="footer-item fb">
+                <a href="https://www.facebook.com" target="_blank" class="footerSocial">
+                    <img src="../img/FBLogo.png" alt="Link Facebook" class="footer-social">
+                </a>
+            </div>
+            <div class="footer-item ig">
+                <a href="https://www.instagram.com" target="_blank" class="footerSocial">
+                    <img src="../img/IGLogo.png" alt="Link Instagram" class="footer-social"> 
+                </a>
+            </div>
+            <div class="footer-item in">
+                <a href="https://www.linkedin.com" target="_blank" class="footerSocial">
+                    <img src="../img/INLogo.png" alt="Link LinkedIn" class="footer-social">
+                </a>
+            </div>
+        <p class="copyright">
+            ® 2024 - Christian Alcalde. Todos los derechos reservados
+        </p>
+        </section>
+    </footer>
+</body>
+</html>

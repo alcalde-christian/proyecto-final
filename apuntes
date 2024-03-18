@@ -1,0 +1,20 @@
+Estilos en línea para Navbar:
+    text-decoration: "underline" para subrayar el link de la página activa. Vi que normalmente se hace con JS, así que provisoriamente uso este método.
+Pre2:
+    Comentarios conteniendo "Pre2" indican una modificación del código sobre algo que ya estaba presentado en la primera pre-entrega.
+---------------------------------------------------------------------------
+Falta resolver:
+    * Resaltado naranja al pasar el mouse por los íconos de redes sociales del footer.**OK**
+    * Íconos de "contacto" y "logo de la página" del footer. El relleno no coincide con el background: linear-gradient del footer. **OK**
+    * Tamaño de las fotos de proyectos.html difieren entre sí. **OK**
+    * En nosotros.html los íconos de la clase us-info-item deberían ser naranjas.
+    * Falta aplicar estilos sobre el texto contenido en us-descript-item
+    * Position: fixed en NavBar. **OK**
+---------------------------------------------------------------------------
+Dar color a botones de carousel **NO**
+Probar carousel indicando alto y ancho de imágenes
+Ajustar index.html a pantallas más pequeñas
+
+Ajustar grid de proyectos.html para que ocupen el ancho de la pantalla en pantallas más pequeñas **OK**
+
+Ajustar footer para pantallas de celulares
