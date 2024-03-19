@@ -68,39 +68,96 @@
             CONTACTO<span class="detail">_</span>
         </h2>
 
-        <!-- Formulario de contacto (FALTA ENLAZAR AL MAIL)-->
-        <!-- Botón de "enviar" da error -->
-        <form action="../forms/form.php" Method="POST">
-            <ul class="contact-form">
-                <li>
-                    <label for="name">Nombre y apellido</label>
-                </li>
-                <li>
-                    <input type="text" name="name" id="name">
-                </li>
-                <li>
-                    <label for="email">e-mail</label>
-                </li>
-                <li>
-                    <input type="email" name="email" id="email">
-                </li>
-                <li>
-                    <label for="phone">Número de teléfono</label>
-                </li>
-                <li>
-                    <input type="text" name="phone" id="phone">
-                </li>
-                <li>
-                    <label for="text">Consulta</label>
-                </li>
-                <li>
-                    <textarea name="text" id="text" cols="30" rows="10"></textarea>
-                </li>
-                <li>
-                    <input type="submit" value="Enviar">
-                </li>
-            </ul>
-        </form>
+        <!-- Sección con los datos de la empresa -->
+        <!-- FlexBox -->
+        <section class="contact-info">
+            <!-- Flexitem -->
+            <div class="contact-info-data">
+                <div class="contact-info-data-item">
+                    <div class="contact-info-data-item-text">
+                        Sarmiento 1664, San Miguel (1663), Buenos Aires
+                    </div>
+                    <div class="contact-info-data-item-icon">
+                        <i class="fa-solid fa-location-dot fa-2xl" style="color: #ff8c00;"></i>
+                    </div>
+                </div>
+                <div class="contact-info-data-item">
+                    <div class="contact-info-data-item-text">
+                        +54 9 11 4023-5538
+                    </div>
+                    <div class="contact-info-data-item-icon">
+                        <i class="fa-brands fa-whatsapp fa-2xl" style="color: #ff8c00;"></i>
+                    </div>
+                </div>
+                <div class="contact-info-data-item">
+                    <div class="contact-info-data-item-text">
+                        correo_generico@hotmail.com
+                    </div>
+                    <div class="contact-info-data-item-icon">
+                        <i class="fa-regular fa-envelope fa-2xl" style="color: #ff8c00;"></i>
+                    </div>
+                </div>
+                <div class="contact-info-data-item">
+                    <div class="contact-info-data-item-text">
+                        Horario de atención: 09 - 18 hs
+                    </div>
+                    <div class="contact-info-data-item-icon">
+                        <i class="fa-regular fa-clock fa-2xl" style="color: #ff8c00;"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Flex item -->
+            <div class="contact-info-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.6114829779567!2d-58.71429803033482!3d-34.54226309363198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd12a5db5b2b%3A0x6df5d6e7adc6f67!2sEDN%2C%20Domingo%20Faustino%20Sarmiento%201664%2C%20B1663%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1710846723847!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="contact-form-photo">
+                <img src="../img/draw.jpg" alt="Foto de construcción">
+            </div>
+            <div class="contact-form-box">
+                <div class="contact-form-box-title">
+                    ESCRIBINOS<span class="detail">_</span>
+                </div>
+                <div class="contact-form-box-text">
+                    Contanos sobre tu proyecto o inquietud y te responderemos a la brevedad
+                </div>
+                <!-- Formulario de contacto (FALTA ENLAZAR AL MAIL)-->
+                <!-- Botón de "enviar" da error -->
+                <form action="../forms/form.php" Method="POST" class="contact-form-box-form">
+                    <div class="contact-form-label">
+                        <label for="name">Nombre y apellido</label>
+                    </div>
+                    <div class="contact-form-input">
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="contact-form-label">
+                        <label for="email">e-mail</label>
+                    </div>
+                    <div class="contact-form-input">
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="contact-form-label">
+                        <label for="phone">Número de teléfono</label>
+                    </div>
+                    <div class="contact-form-input">
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                    <div class="contact-form-label">
+                        <label for="text">Consulta</label>
+                    </div>
+                    <div class="contact-form-input">
+                        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="contact-form-button">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
     </main>
     <!-- Footer a las distintas redes sociales -->
     <footer>
@@ -125,5 +182,7 @@
         </p>
         </section>
     </footer>
+    <!-- Script de Font Awesome -->
+    <script src="https://kit.fontawesome.com/31d4edc7b8.js" crossorigin="anonymous"></script>
 </body>
 </html>
