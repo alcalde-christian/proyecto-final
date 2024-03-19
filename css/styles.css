@@ -111,7 +111,6 @@ a:visited {
 /* Espaciado para los títulos de las páginas */
 .pageTitle {
     padding: 0px 0px 10px 30px;
-    /* background:linear-gradient(to bottom,#ffffff,#d3d3d3); INOP (descartado por el momento) */
 }
 
 /* Fuente para todas las etiquetas <p> */
@@ -129,7 +128,6 @@ p {
         .services-container { /* Atributos del Flex Container de index.html. Falta chequear comportamiento responsivo y márgenes */
             display: flex;
             /* Se eliminó justify-content: space-between para mantener centradas las imágenes durante el wrap. Se reemplazó con justify-content:center + padding: 0px 50px; */
-            /* justify-content: space-between; */
             justify-content: center;
             flex-wrap: wrap;
             margin: 25px 50px;
@@ -362,7 +360,7 @@ p {
         }
 
     /* servicios.html */
-        /* Espaciado para los títulos de los servicios ofrecidos (únicos <h3> en todo el proyecto) */
+        /* Espaciado para los títulos de los servicios ofrecidos */
         h3 {
             padding-bottom: 20px;
         }
@@ -510,7 +508,6 @@ p {
         .project-grid-item {
             width: 100%;
             height: 100%;
-            /*border-radius: 10px; INOP (descartado por el momento) */
         }
 
         /* Efecto de claridad y aumento de tamaño al pasar el mouse por sobre las imágenes */
@@ -575,8 +572,6 @@ p {
         textarea {
             font-family: "cantarell";
         }
-
-
 
 /*-----------------------------------------------------------------*/
 /* ESTILOS PARA EL FOOTER ---------------------------------------- */
@@ -655,28 +650,6 @@ footer {
         .main-services {
             width: 100%;
             height: 250px; /* Altura limitada a 200px. Falta chequear comportamiento responsive */
-        }
-
-/* nosotros.html */
-    /* Principal */
-        /* .us-main-photo {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        } */
-
-    /* Equipo */
-        .us-descript-photo {
-            width: 25%;
-            padding: 25px;
-            border: 5px solid #ff8c00;
-            /* border-radius: 10px; INOP (descartado por el momento) */
-            margin: 25px 50px;
-        }
-
-    /* Íconos */
-        .info {
-            width: 50px;
         }
 
 /* servicios.html */
