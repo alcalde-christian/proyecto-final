@@ -103,6 +103,11 @@ a:visited {
     color: #ff8c00;
 }
 
+.bold {
+    font-family: "cantarell";
+    font-weight: bold;
+}
+
 /* Espaciado para los títulos de las páginas */
 .pageTitle {
     padding: 0px 0px 10px 30px;
@@ -156,36 +161,204 @@ p {
         }
 
     /* nosotros.html */
-        /* Flex Box para organizar el contenido de la página (mejorar): */
-            /* Mejorar: colores de los íconos, ubicación de las etiquetas <p>, comportamiento responsivo */
-        .us-descript-container {
-            display: flex;
-            align-items: center;
-        }
+        /* Sección primera: imágenes */
+            /* Creación de grid que contendrá dos imágenes y dos cajas que se superpondrán entre sí */
+            .us-main-grid-container {
+                display: grid;
+                grid-template-columns: repeat(9,1fr);
+                grid-template-rows: repeat(3,30vh);
+            }
 
-        .us-descript-item {
-            margin: 25px 10px 25px 0px;
-        }
+            /* Asignación de tamaño para las imágenes */
+            .us-main-grid-item {
+                width: 100%;
+                height: 100%;
+            }
 
-        .us-info-container {
-            display: flex;
-            justify-content: center;
-            margin: 25px 100px;
-            gap: 50px;
-        }
+            /* Asignación de ubicación de la foto principal */
+            .us-main-photo-office {
+                grid-column: 3/10;
+                grid-row: 1/4;
+                z-index: -1;
+            }
 
-        .us-info-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            /* Asignación de ubicación de la foto en B&W */
+            .us-main-photo-office-bw {
+                grid-column: 1/6;
+                grid-row: 1/3;
+                z-index: -2;
+                position: relative;
+                top: 100px;
+                opacity: 50%;
+            }
 
-        .us-info-item {
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            gap: 25px;
-            margin: 15px;
+            /* Asignación de ubicación de la caja contenedora de texto */
+            .us-main-box {
+                grid-column: 2/5;
+                grid-row: 2/3;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* Estilos de la cita */
+            .us-main-box-quote {
+                font-family: "poppins";
+                font-style: italic;
+                font-size: 1.5em;
+                padding: 0 25px 0 10px;
+            }
+
+            /* Estilos de la firma */
+            .us-main-box-sign {
+                font-family: "poppins";
+                font-style: italic;
+                color: #ff8c00;
+                padding: 0 25px 0 10px;
+            }
+
+            /* Ubicación y estilos de la caja vacía */
+            .us-main-box-blank {
+                grid-column: 2/6;
+                grid-row: 2/3;
+                background-color: white;
+                opacity: 25%;
+                position: relative;
+                top: 50px;
+                left: 50px;
+                z-index: -1;
+            }
+
+            /* Falta aplicar media queries para los distintos tamaños de desktop */
+        
+        /* Sección segunda: objetivos */
+            .us-goals-container {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin: 100px 0;
+            }
+
+            .us-goals-title {
+                text-align: center;
+                font-size: 1.5em;
+                padding-bottom: 25px;
+            }
+
+            .us-goals-text {
+                display: flex;
+            }
+
+            .us-goals-text-left {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 25px;
+                padding: 25px 25px 25px 100px;
+            }
+
+            .us-goals-text-right {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 25px 100px 25px 25px;
+            }
+
+            /* Falta aplicar media queries para los distintos tamaños de desktop */
+
+        /* Sección tercera: cita */
+            .us-message {
+                text-align: center;
+                font-family: "poppins";
+                font-size: 2em;
+                padding: 100px 250px;
+                background-color: #ff8c00;
+                color: white;
+            }
+
+            .us-message h5 {
+                font-family: "poppins";
+                font-style: italic;
+            }
+
+        /* Sección cuarta: equipo */
+        /* Utilización de FlexBox */
+            /* Contenedor principal contiene title e info */
+            .us-team {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin: 100px 0;
+            }
+
+            /* Estilos del título de objetivos */
+            .us-team-title {
+                text-align: center;
+                font-size: 1.5em;
+                padding-bottom: 25px;
+            }
+
+            /* Organización de los socios uno debajo del otro */
+            .us-team-info {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Organización de la información de cada socio */
+            .us-team-info-partner {
+                display: flex;
+                justify-content: center;
+                margin: 25px 0;
+                /* Separación del centro */
+                gap: 100px;
+            }
+
+            /* Estilos del texto descriptivo de cada socio */
+            .us-team-info-data {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: right;
+            }
+
+            /* Estilos del nombre y apellido */
+            .us-team-info-data-name {
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+
+            /* Estilos de la información suplementaria */
+            .us-team-info-data-work {
+                font-style: italic;
+                font-size: 1em;
+                color: #ff8c00;
+            }
+
+            /* Estilos de las fotos de cada socio */
+            .us-team-info-photo {
+                display: flex;
+                width: 50%;
+            }
+
+            /* Estilos de imágenes de socios */
+            .us-team-info-photo img {
+                /* Anchos y altos de imágenes */
+                width: 160px;
+                height: 160px;
+                /* Borde redondeado */
+                border-radius: 50%;
+            }
+
+        /* Sección quinta: foto final */
+        .us-final img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-bottom: 100px;
         }
 
     /* servicios.html */
@@ -486,11 +659,11 @@ footer {
 
 /* nosotros.html */
     /* Principal */
-        .us-main-photo {
+        /* .us-main-photo {
             width: 100%;
             height: 500px;
             object-fit: cover;
-        }
+        } */
 
     /* Equipo */
         .us-descript-photo {

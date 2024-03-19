@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Conexión con .css -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Conexión con Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- Título de la página en pestañas -->
     <title>AA - Estudio técnico de arquitectura</title>
     <!-- Ícono de la página -->
@@ -68,67 +75,109 @@
             NOSOTROS<span class="detail">_</span>
         </h2>
 
-        <!-- Imagen principal de este html -->
-        <img src="../img/us2.jpg" alt="Acerca de nosotros" class="us-main-photo">
+        <!-- Imágenes principales de esta página con superposiciones y textos -->
+        <!-- Se aplicó grid para posicionar los diferentes elementos -->
+        <section class="us-main-grid-container">
+            <!-- Foto principal a color -->
+            <img src="..//img/office-one.jpg" alt="Foto de oficina" class="us-main-grid-item us-main-photo-office">
+            <!-- Foto principal en B&W -->
+            <img src="..//img/office-bw.jpg" alt="Foto de oficina en blanco y negro" class="us-main-grid-item us-main-photo-office-bw">
+            <!-- Caja para contener texto con FlexBox aplicado -->
+            <div class="us-main-box">
+                <h3 class="us-main-box-quote">
+                    "El diseño arquitectónico no es solo poner formas juntas, es contar una historia"
+                </h3>
+                <p class="us-main-box-sign">
+                    Cesar Pelli
+                </p>
+            </div>
+            <!-- Caja vacía con fines decorativos -->
+            <div class="us-main-box-blank"></div>
+        </section>
 
-        <!-- Cuerpo de la página. Pre2: se incorporó <section> -->
-        <!-- <section> contenedora para organizar los ítems -->
-        <section class="us-descript-container">
-            <img src="../img/team.jpg" alt="Equipo de trabajo" class="us-descript-photo">
-            <div class="us-descript-item">
-                <p> <!-- Pre2: se cambiaron <br> por varios <p> -->
-                    Nos dedicamos a transformar ideas en realidades arquitectónicas inspiradoras. Con una pasión por el diseño innovador y una dedicación a la excelencia en cada proyecto, nos esforzamos por superar las expectativas de nuestros clientes y dejar una marca duradera en el paisaje urbano.
-                </p>
-                <p>
-                    Nuestro enfoque integral abarca todas las facetas del diseño arquitectónico y la gestión de proyectos, desde la concepción inicial hasta la finalización de la construcción. Con una combinación de creatividad, experiencia y atención al detalle, abordamos cada desafío con entusiasmo y determinación, trabajando en estrecha colaboración con nuestros clientes para crear soluciones personalizadas y orientadas al futuro.
-                </p>
-                <p>
-                    En nuestro estudio, valoramos la innovación, la sostenibilidad y el compromiso con la comunidad. Nos esforzamos por integrar prácticas de construcción sostenible en todos nuestros proyectos, minimizando nuestro impacto en el medio ambiente y promoviendo la responsabilidad social en nuestra industria. Creemos en el poder del diseño para enriquecer vidas, mejorar comunidades y transformar el mundo que nos rodea.
-                </p>
-                <p>
-                    Nuestro equipo está formado por arquitectos apasionados, diseñadores creativos y profesionales de gestión de proyectos altamente capacitados, todos comprometidos con la excelencia en todo lo que hacemos. Con una combinación de talento, experiencia y visión, estamos listos para enfrentar cualquier desafío y llevar tus sueños arquitectónicos a la vida.
-                </p>
-                <p>
-                    Ya sea que estés planeando construir una residencia familiar, desarrollar un complejo comercial o revitalizar un vecindario entero, estamos aquí para ayudarte a hacer realidad tu visión. Nos enorgullece ofrecer servicios de clase mundial y resultados excepcionales que reflejan nuestro compromiso con la excelencia y la innovación en la arquitectura.
-                </p>
-                <p>
-                    Únete a nosotros en este emocionante viaje hacia el futuro del diseño arquitectónico. Juntos, podemos crear un mundo más hermoso, sostenible y significativo para las generaciones venideras.
-                </p>
+        <!-- Cuerpo de la página describiendo la actividad de la empresa -->
+        <!-- FlexBox aplicado para organizar los elementos -->
+        <!-- Etiquetas <span> para resaltar el contenido del texto -->
+        <section class="us-goals-container">
+            <h4 class="us-goals-title">
+                O B J E T I V O S <span class="detail">_</span>
+            </h4>
+            <div class="us-goals-text">
+                <!-- Columna de la izquierda -->
+                <div class="us-goals-text-left">
+                    <p>
+                        En nuestro estudio, cada proyecto es <span class="bold">meticulosamente sometido a la evaluación de diversos parámetros</span>, como la funcionalidad, las consideraciones de ingeniería, los costos, el impacto urbano, la composición y los plazos.
+                    </p>
+                    <p>
+                        Por ello, asumimos la responsabilidad de no solo diseñar, sino también de <span class="bold">elaborar la documentación de ingeniería y dirigir nuestros proyectos</span>, monitoreando y ajustando múltiples variables durante todo el proceso para asegurar la creación de una obra de arte duradera.
+                    </p>
+                </div>
+                <!-- Columna de la derecha -->
+                <div class="us-goals-text-right">
+                    <p>
+                        Nuestra misión es superar las expectativas de nuestros clientes y crear obras arquitectónicas de excelencia, <span class="bold">dejando un legado positivo para las generaciones futuras</span>.
+                    </p>
+                    <p>
+                        Al fin y al cabo, nuestras obras son partícipes innegables de la comunidad en donde se desarrollan, y es por ello que <span class="bold">integramos nuestros proyectos al entorno</span> para reflejar verdaderamente la identidad y las aspiraciones de la sociedad.
+                    </p>
+                </div>
             </div>
         </section>
-        <!-- <section> contenedora para organizar los ítems -->
-        <section class="us-info-container">
-            <div class="us-info-list">
-                <!-- Pre2: se reemplazó la tabla desordenada por <div> para ordenar los elementos mediante Flex Box -->
-                <div class="us-info-item">
-                    <p>
-                        Sarmiento 1664, San Miguel (1663), Buenos Aires, Argentina
-                    </p>
-                    <img src="../img/location.jpg" alt="Dirección" class="info">
+
+        <!-- Sección con cita -->
+        <section class="us-message">
+            <h5>
+                “la misión del arquitecto es ayudar a las personas entender cómo hacer la vida más bella, hacer un mundo mejor para vivir y darle una justificación y un sentido a la vida”
+            </h5>
+        </section>
+
+        <!-- Sección donde se presenta al equipo -->
+        <section class="us-team">
+            <!-- Título de la sección -->
+            <div class="us-team-title">
+                E Q U I P O <span class="detail">_</span>
+            </div>
+            <!-- Contenedor: listado de socios -->
+            <div class="us-team-info">
+                <!-- Socio número uno -->
+                <div class="us-team-info-partner">
+                    <div class="us-team-info-data">
+                        <p class="us-team-info-data-name">
+                            ALCALDE, Alejandro Fabián
+                        </p>
+                        <p class="us-team-info-data-work">
+                            Maestro Mayor en Obras
+                        </p>
+                        <p class="us-team-info-data-work">
+                            Inspector de obras particulares
+                        </p>
+                    </div>
+                    <div class="us-team-info-photo">
+                        <img src="../img/leader.jpg" alt="Foto del director">
+                    </div>
                 </div>
-                <div class="us-info-item">
-                    <p>
-                        correogenerico@hotmail.com
-                    </p>
-                    <img src="../img/mail2.png" alt="Correo electrónico" class="info">
-                </div>
-                <div class="us-info-item">
-                    <p>
-                        +54 9 11 4023 5538
-                    </p>
-                    <img src="../img/WPLogo.jpg" alt="Teléfono de contacto" class="info">
-                </div>
-                <div class="us-info-item">
-                    <p>
-                        Lunes a viernes de 14 hs a 18 hs
-                    </p>
-                    <img src="../img/watch.jpg" alt="Horario" class="info">
+                <!-- Socio número dos -->
+                <div class="us-team-info-partner">
+                    <div class="us-team-info-data">
+                        <p class="us-team-info-data-name">
+                            VELARDE, Esteban Jeremías
+                        </p>
+                        <p class="us-team-info-data-work">
+                            Arquitecto
+                        </p>
+                        <p class="us-team-info-data-work">
+                            Egresado U.B.A.
+                        </p>
+                    </div>
+                    <div class="us-team-info-photo">
+                        <img src="../img/coworker.jpg" alt="Foto del arquitecto">
+                    </div>
                 </div>
             </div>
-            <div class="us-info-map">
-                <!-- Mapa incorporado haciendo referencia al domicilio de la empresa -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.446063764666!2d-58.71622922339461!3d-34.54225975425655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd12a5db5b2b%3A0x6df5d6e7adc6f67!2sEDN%2C%20Domingo%20Faustino%20Sarmiento%201664%2C%20B1663%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1708758239304!5m2!1ses-419!2sar" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        </section>
+
+        <section class="us-final">
+            <img src="../img/random.jpg" alt="Foto estética">
         </section>
     </main>
     <!-- Footer a las distintas redes sociales -->
