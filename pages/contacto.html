@@ -78,6 +78,7 @@
                         Sarmiento 1664, San Miguel (1663), Buenos Aires
                     </div>
                     <div class="contact-info-data-item-icon">
+                        <!-- Ícono importado de Font Awesome -->
                         <i class="fa-solid fa-location-dot fa-2xl" style="color: #ff8c00;"></i>
                     </div>
                 </div>
@@ -86,6 +87,7 @@
                         +54 9 11 4023-5538
                     </div>
                     <div class="contact-info-data-item-icon">
+                        <!-- Ícono importado de Font Awesome -->
                         <i class="fa-brands fa-whatsapp fa-2xl" style="color: #ff8c00;"></i>
                     </div>
                 </div>
@@ -94,6 +96,7 @@
                         correo_generico@hotmail.com
                     </div>
                     <div class="contact-info-data-item-icon">
+                        <!-- Ícono importado de Font Awesome -->
                         <i class="fa-regular fa-envelope fa-2xl" style="color: #ff8c00;"></i>
                     </div>
                 </div>
@@ -102,6 +105,7 @@
                         Horario de atención: 09 - 18 hs
                     </div>
                     <div class="contact-info-data-item-icon">
+                        <!-- Ícono importado de Font Awesome -->
                         <i class="fa-regular fa-clock fa-2xl" style="color: #ff8c00;"></i>
                     </div>
                 </div>
@@ -112,23 +116,28 @@
             </div>
         </section>
 
+        <!-- Sección del formulario de contacto -->
+        <!-- FlexBox -->
         <section class="contact-form">
+            <!-- Flex item -->
             <div class="contact-form-photo">
                 <img src="../img/draw.jpg" alt="Foto de construcción">
             </div>
+            <!-- Flex item -->
             <div class="contact-form-box">
+                <!-- Título -->
                 <div class="contact-form-box-title">
                     ESCRIBINOS<span class="detail">_</span>
                 </div>
+                <!-- Texto descriptivo -->
                 <div class="contact-form-box-text">
                     Contanos sobre tu proyecto o inquietud y te responderemos a la brevedad
                 </div>
-                <!-- Formulario de contacto (FALTA ENLAZAR AL MAIL)-->
-                <!-- Botón de "enviar" da error -->
+                <!-- Formulario de contacto funcionando a través de una API -->
                 <form action="https://api.staticforms.xyz/submit" Method="POST" class="contact-form-box-form">
-                    <!-- API para el envío de mails -->
+                    <!-- Clave requerida por la API para el envío de mails -->
                     <input type="hidden" name="accessKey" value="18cc1f1b-79c3-42e2-bcd8-5b0af68df17d">
-                    
+                    <!-- Labels e inputs -->
                     <div class="contact-form-label">
                         <label for="name">Nombre y apellido</label>
                     </div>
@@ -153,42 +162,14 @@
                     <div class="contact-form-input">
                         <textarea name="message" id="text" cols="30" rows="10"></textarea>
                     </div>
+                    <!-- Input controlado por la API para dirigirnos a la página exito.html luego de enviar el mensaje -->
+                    <input type="hidden" name="redirectTo" value="https://alcalde-christian.github.io/proyecto-final/pages/exito.html">
                     <div class="contact-form-button">
                         <input type="submit" value="Enviar">
                     </div>
                 </form>
-                <!-- <form action="../forms/form.php" Method="POST" class="contact-form-box-form">
-                    <div class="contact-form-label">
-                        <label for="name">Nombre y apellido</label>
-                    </div>
-                    <div class="contact-form-input">
-                        <input type="text" name="name" id="name">
-                    </div>
-                    <div class="contact-form-label">
-                        <label for="email">e-mail</label>
-                    </div>
-                    <div class="contact-form-input">
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div class="contact-form-label">
-                        <label for="phone">Número de teléfono</label>
-                    </div>
-                    <div class="contact-form-input">
-                        <input type="text" name="phone" id="phone">
-                    </div>
-                    <div class="contact-form-label">
-                        <label for="text">Consulta</label>
-                    </div>
-                    <div class="contact-form-input">
-                        <textarea name="text" id="text" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="contact-form-button">
-                        <input type="submit" value="Enviar">
-                    </div>
-                </form> -->
             </div>
         </section>
-
 
     </main>
     <!-- Footer a las distintas redes sociales -->
