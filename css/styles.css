@@ -655,6 +655,8 @@ p {
                             font-family: "cantarell";
                             border: none;
                             border-bottom: 1px solid #ff8c00;
+                            /* Para que el usuario no modifique el tamaño del textarea */
+                            resize: none;
                         }
 
                             .contact-form-input textarea:focus {
