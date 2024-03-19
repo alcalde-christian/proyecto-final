@@ -617,28 +617,33 @@ p {
                     flex-direction: column;
                 }
 
+                    /* Estilos de la caja contenedora del título del form */
                     .contact-form-box-title {
                         text-align: center;
                         font-size: 1.3em;
                         padding-bottom: 25px;
                     }
 
+                    /* Estilos de la caja contenedora de texto del form */
                     .contact-form-box-text {
                         text-align: center;
                         font-family: "cantarell";
                         padding-bottom: 25px;
                     }
 
+                    /* Estilos de la caja contenedora del form en sí */
                     .contact-form-box-form {
                         display: flex;
                         flex-direction: column;
                         padding: 0 25%;
                     }
 
+                        /* Separación de labels */
                         .contact-form-label {
                             padding: 5px 0;
                         }
 
+                        /* Estilos de los campos de ingreso de datos */
                         .contact-form-input input {
                             width: 100%;
                             height: 2em;
@@ -647,10 +652,12 @@ p {
                             border-bottom: 1px solid #ff8c00;
                         }
 
+                            /* Elimina el borde al hacer click en el input */
                             .contact-form-input input:focus {
                                 outline: none;
                             }
 
+                        /* Estilos del área de mensaje */
                         .contact-form-input textarea {
                             width: 100%;
                             font-family: "cantarell";
@@ -660,20 +667,23 @@ p {
                             resize: none;
                         }
 
+                            /* Elimina el borde al hacer click en el input */
                             .contact-form-input textarea:focus {
                                 outline: none;
                             }
 
+                        /* Estilos del botón "enviar" */
                         .contact-form-button input {
                             width: 100%;
                             border: none;
                             padding: 5px 0;
                             background-color: white;
                             font-weight: bold;
-                            font-size: 1em;
+                            font-size: 1.1em;
                             cursor: pointer;
                         }
 
+                            /* Estilos :hover para el botón "enviar" */
                             .contact-form-button input:hover {
                                 color: #ff8c00;
                             }

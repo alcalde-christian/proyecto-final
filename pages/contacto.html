@@ -162,7 +162,9 @@
                     <div class="contact-form-input">
                         <textarea name="message" id="text" cols="30" rows="10"></textarea>
                     </div>
-                    <!-- Input controlado por la API para dirigirnos a la página exito.html luego de enviar el mensaje -->
+                    <!-- Input oculto para controlar el header Reply-To -->
+                    <input type="hidden" name="replyTo" value="@">
+                    <!-- Input oculto controlado por la API para dirigirnos a la página exito.html luego de enviar el mensaje -->
                     <input type="hidden" name="redirectTo" value="https://alcalde-christian.github.io/proyecto-final/pages/exito.html">
                     <div class="contact-form-button">
                         <input type="submit" value="Enviar">
