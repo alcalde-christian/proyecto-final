@@ -20,6 +20,6 @@ $asunto = 'Mail enviado a través de la web de Estudio de Arquitectura'; // Asun
 mail($para, $asunto, $text, $header);
 
 // Redirección al html de "envío exitoso"
-header('Location:envio.html');
+header('Location:exito.html');
 
 ?>
