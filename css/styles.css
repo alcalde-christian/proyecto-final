@@ -643,6 +643,7 @@ p {
                             width: 100%;
                             height: 2em;
                             border: none;
+                            font-family: "cantarell";
                             border-bottom: 1px solid #ff8c00;
                         }
 
@@ -665,7 +666,6 @@ p {
 
                         .contact-form-button input {
                             width: 100%;
-                            font-family: "cantarell";
                             border: none;
                             padding: 5px 0;
                             background-color: white;
