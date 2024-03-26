@@ -16,6 +16,11 @@
     transition: background-color 0.5s ease;
 }
 
+/* Elimina el color predeterminado de los enlaces ya visitados */
+a:visited {
+    color: currentColor;
+}
+
 /* Fuentes utilizadas en el proyecto */
 @font-face {
     font-family: "anta";
@@ -35,65 +40,62 @@ header {
     height: 100px;
 }
 
-/* Oculta el <h1> que se mostrará sólo en versiones mobile */
-.mobile {
-    display: none;
-}
+    /* Oculta el título de la página que sólo se mostrará en versiones mobile */
+    .mobile, .tablet {
+        display: none;
+    }
 
-/* Oculta el menú hamburguesa que se mostrará sólo en mobile / tablet */
-.hamburger {
-    display: none;
-}
+    /* Estilos para el menú hamburguesa que sólo será visible en tablet y mobile */
+    .hamburger {
+        border: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: black;
+        margin-right: 15px;
+    }
 
-.navBar-container {
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Para asegurarse que el header siempre se mantenga visible */
-    z-index: 2 !important; 
-}
+        /* Estilos para el menú hamburguesa desplegable cuando está visible */
+        .show {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
 
-.navTitle {
-    display: flex;
-    align-items: center;
-}
+        /* Estilos para el menú hamburguesa desplegable cuando está en transición */
+        .collapsing {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
 
-.navLinks {
-    display: flex;
-    /* Margin: 0 para pisar el valor que le asigna Bootstrap */
-    margin: 0;
-    /* Elimina viñetas en NavBar */
-    list-style: none;
-}
+    /* Contenedor padre de logo y título */
+    .navbar-title {
+        display: flex;
+        align-items: center;        
+    }
 
-/* Tamaño del logo en NavBar */
-.logo {
-    width: 100px;
-}
+        /* Tamaño del logo en NavBar */
+        .logo {
+            width: 100px;
+        }
 
-/* Estilos para el título, pisando los asignados por Bootstrap */
-.title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0;
-}
+        /* Estilos para el título, pisando los asignados por Bootstrap */
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
 
-/* Elimina subrayado en enlaces de NavBar, establece separación y color */
-.navLinks-items {
-    font-size: 1em;
-    color: black;
-    text-decoration: none;
-    margin: 0px 1rem;
-}
+    /* Contenedor padre de enlaces */
+    .navbar-links {
+        justify-content: right;
+    }
 
-/* Para evitar que los enlaces cambien de color luego de haber sido clickeados */
-a:visited {
-    color: currentColor;
-}
+        /* Establece separación y color en enlaces */
+        .nav-link {
+            color: black;
+            margin: 0px 1rem;
+        }
 
 /*-----------------------------------------------------------------*/
 /* ESTILOS PARA EL CUERPO DE LAS PÁGINAS ------------------------- */
@@ -109,8 +111,12 @@ a:visited {
 }
 
 /* Espaciado para los títulos de las páginas */
-.pageTitle {
+.page-title {
+    font-family: "anta";
+    font-weight: bold;
+    font-size: 1.5em;
     padding: 0px 0px 10px 30px;
+    margin: 0;
 }
 
 /* Fuente para todas las etiquetas <p> */
@@ -125,43 +131,43 @@ p {
             object-fit: cover;
         }
 
-        /* Cambio de color de los botones prev/next del carousel */
-        .carousel-control-prev-icon, .carousel-control-next-icon  {
-            filter: invert(54%) sepia(41%) saturate(2128%) hue-rotate(0deg) brightness(103%) contrast(103%);
-        }
+            /* Cambio de color de los botones prev/next del carousel */
+            .carousel-control-prev-icon, .carousel-control-next-icon  {
+                filter: invert(54%) sepia(41%) saturate(2128%) hue-rotate(0deg) brightness(103%) contrast(103%);
+            }
 
         .services-container { /* Atributos del Flex Container de index.html. Falta chequear comportamiento responsivo y márgenes */
             display: flex;
             /* Se eliminó justify-content: space-between para mantener centradas las imágenes durante el wrap. Se reemplazó con justify-content:center + padding: 0px 50px; */
             justify-content: center;
             flex-wrap: wrap;
-            margin: 25px 50px;
+            margin: 25px 30px;
         }
 
-        .services-item {
-            text-align: center;
-            padding: 0px 50px;
-        }
+            .services-item {
+                text-align: center;
+                padding: 15px 50px;
+            }
 
-        /* Separación de la imagen respecto del texto */
-        .services-item a img {
-            /* Padding para utilizar :hover {transition} */
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
+                /* Separación de la imagen respecto del texto */
+                .services-item a img {
+                    /* Padding para utilizar :hover {transition} */
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                }
 
-        /* Efecto que "subraya" las imágenes cuando pasa el mouse sobre ellas */
-        .services-item img:hover {
-            background-color: #ff8c00;
-            transition: background-color 0.5s ease;
-        }
+                    /* Efecto que "subraya" las imágenes cuando pasa el mouse sobre ellas */
+                    .services-item img:hover {
+                        background-color: #ff8c00;
+                        transition: background-color 0.5s ease;
+                    }
 
-        /* Estilos del texto que se encuentra debajo de las imágenes de los servicios ofrecidos */
-        .services-item h2 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 0;
-        }
+                /* Estilos del texto que se encuentra debajo de las imágenes de los servicios ofrecidos */
+                .services-item h2 {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin: 0;
+                }
 
     /* nosotros.html */
         /* Sección primera: imágenes */
@@ -172,66 +178,68 @@ p {
                 grid-template-rows: repeat(3,30vh);
             }
 
-            /* Asignación de tamaño para las imágenes */
-            .us-main-grid-item {
-                width: 100%;
-                height: 100%;
-            }
+                /* Asignación de tamaño para las imágenes */
+                .us-main-grid-item {
+                    width: 100%;
+                    height: 100%;
+                }
 
-            /* Asignación de ubicación de la foto principal */
-            .us-main-photo-office {
-                grid-column: 3/10;
-                grid-row: 1/4;
-                z-index: -1;
-            }
+                /* Asignación de ubicación de la foto principal */
+                .us-main-photo-office {
+                    grid-column: 3/10;
+                    grid-row: 1/4;
+                    z-index: -1;
+                }
 
-            /* Asignación de ubicación de la foto en B&W */
-            .us-main-photo-office-bw {
-                grid-column: 1/6;
-                grid-row: 1/3;
-                z-index: -2;
-                position: relative;
-                top: 100px;
-                opacity: 50%;
-            }
+                /* Asignación de ubicación de la foto en B&W */
+                .us-main-photo-office-bw {
+                    grid-column: 1/6;
+                    grid-row: 1/3;
+                    z-index: -2;
+                    position: relative;
+                    top: 100px;
+                    opacity: 50%;
+                }
 
-            /* Asignación de ubicación de la caja contenedora de texto */
-            .us-main-box {
-                grid-column: 2/5;
-                grid-row: 2/3;
-                background-color: white;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
+                /* Asignación de ubicación de la caja contenedora de texto */
+                .us-main-box {
+                    grid-column: 2/5;
+                    grid-row: 2/3;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
 
-            /* Estilos de la cita */
-            .us-main-box-quote {
-                font-family: "poppins";
-                font-style: italic;
-                font-size: 1.5em;
-                padding: 0 25px 0 10px;
-            }
+                    /* Estilos de la cita */
+                    .us-main-box-quote {
+                        font-family: "poppins";
+                        font-weight: bold;
+                        font-style: italic;
+                        line-height: 1.5;
+                        font-size: 1.5em;
+                        padding: 0 25px 0 10px;
+                    }
 
-            /* Estilos de la firma */
-            .us-main-box-sign {
-                font-family: "poppins";
-                font-style: italic;
-                color: #ff8c00;
-                padding: 0 25px 0 10px;
-            }
+                    /* Estilos de la firma */
+                    .us-main-box-sign {
+                        font-family: "poppins";
+                        font-style: italic;
+                        color: #ff8c00;
+                        padding: 0 25px 0 10px;
+                    }
 
-            /* Ubicación y estilos de la caja vacía */
-            .us-main-box-blank {
-                grid-column: 2/6;
-                grid-row: 2/3;
-                background-color: white;
-                opacity: 25%;
-                position: relative;
-                top: 50px;
-                left: 50px;
-                z-index: -1;
-            }
+                /* Ubicación y estilos de la caja vacía */
+                .us-main-box-blank {
+                    grid-column: 2/6;
+                    grid-row: 2/3;
+                    background-color: white;
+                    opacity: 25%;
+                    position: relative;
+                    top: 50px;
+                    left: 50px;
+                    z-index: -1;
+                }
 
             /* Falta aplicar media queries para los distintos tamaños de desktop */
         
@@ -243,32 +251,33 @@ p {
                 margin: 100px 0;
             }
 
-            .us-goals-title {
-                text-align: center;
-                font-size: 1.5em;
-                padding-bottom: 25px;
-            }
+                .us-goals-title {
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 1.5em;
+                    padding-bottom: 25px;
+                }
 
-            .us-goals-text {
-                display: flex;
-            }
+                .us-goals-text {
+                    display: flex;
+                }
 
-            .us-goals-text-left {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 25px;
-                padding: 25px 25px 25px 100px;
-            }
+                    .us-goals-text-left {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        gap: 25px;
+                        padding: 25px 25px 25px 100px;
+                    }
 
-            .us-goals-text-right {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 25px 100px 25px 25px;
-            }
+                    .us-goals-text-right {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 25px 100px 25px 25px;
+                    }
 
             /* Falta aplicar media queries para los distintos tamaños de desktop */
 
@@ -282,10 +291,13 @@ p {
                 color: white;
             }
 
-            .us-message h5 {
-                font-family: "poppins";
-                font-style: italic;
-            }
+                .us-message h5 {
+                    font-family: "poppins";
+                    font-style: italic;
+                    font-weight: bold;
+                    font-size: 0.83em;
+                    line-height: 1.5;
+                }
 
         /* Sección cuarta: equipo */
         /* Utilización de FlexBox */
@@ -297,64 +309,65 @@ p {
                 margin: 100px 0;
             }
 
-            /* Estilos del título de objetivos */
-            .us-team-title {
-                text-align: center;
-                font-size: 1.5em;
-                padding-bottom: 25px;
-            }
+                /* Estilos del título de equipo */
+                .us-team-title {
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 1.5em;
+                    padding-bottom: 25px;
+                }
 
-            /* Organización de los socios uno debajo del otro */
-            .us-team-info {
-                display: flex;
-                flex-direction: column;
-            }
+                /* Organización de los socios uno debajo del otro */
+                .us-team-info {
+                    display: flex;
+                    flex-direction: column;
+                }
 
-            /* Organización de la información de cada socio */
-            .us-team-info-partner {
-                display: flex;
-                justify-content: center;
-                margin: 25px 0;
-                /* Separación del centro */
-                gap: 100px;
-            }
+                    /* Organización de la información de cada socio */
+                    .us-team-info-partner {
+                        display: flex;
+                        justify-content: center;
+                        margin: 25px 0;
+                        /* Separación del centro */
+                        gap: 100px;
+                    }
 
-            /* Estilos del texto descriptivo de cada socio */
-            .us-team-info-data {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-align: right;
-            }
+                        /* Estilos del texto descriptivo de cada socio */
+                        .us-team-info-data {
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            text-align: right;
+                        }
 
-            /* Estilos del nombre y apellido */
-            .us-team-info-data-name {
-                font-weight: bold;
-                font-size: 1.5em;
-            }
+                            /* Estilos del nombre y apellido */
+                            .us-team-info-data-name {
+                                font-weight: bold;
+                                font-size: 1.5em;
+                            }
 
-            /* Estilos de la información suplementaria */
-            .us-team-info-data-work {
-                font-style: italic;
-                font-size: 1em;
-                color: #ff8c00;
-            }
+                            /* Estilos de la información suplementaria */
+                            .us-team-info-data-work {
+                                font-style: italic;
+                                font-size: 1em;
+                                color: #ff8c00;
+                            }
 
-            /* Estilos de las fotos de cada socio */
-            .us-team-info-photo {
-                display: flex;
-                width: 50%;
-            }
+                        /* Estilos de las fotos de cada socio */
+                        .us-team-info-photo {
+                            display: flex;
+                            width: 50%;
+                        }
 
-            /* Estilos de imágenes de socios */
-            .us-team-info-photo img {
-                /* Anchos y altos de imágenes */
-                width: 160px;
-                height: 160px;
-                /* Borde redondeado */
-                border-radius: 50%;
-            }
+                            /* Estilos de imágenes de socios */
+                            .us-team-info-photo img {
+                                /* Anchos y altos de imágenes */
+                                width: 160px;
+                                height: 160px;
+                                /* Borde redondeado */
+                                border-radius: 50%;
+                            }
 
         /* Sección quinta: foto final */
         .us-final img {
@@ -372,7 +385,7 @@ p {
 
         /* Se aplica Grid para organizar los distintos servicios */
         /* Grid general contenedor de 3 grids más pequeños (1x3) */
-        .servicesGrid-container {
+        .services-grid-container {
             display: grid;
             grid-template-columns: repeat(1,1fr);
             grid-template-rows: repeat(3,1fr);
@@ -384,120 +397,121 @@ p {
             margin-bottom: 50px;
         }
 
-        /* Disposición de Grids más pequeños (6x4 c/u) */
-        .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
-            display: grid;
-            grid-template-columns: repeat(6,1fr);
-            grid-template-rows: repeat(4,1fr);
-        }
-
-        /* Media query para mantener el aspecto en desktop grandes */
-        @media screen and (min-width:1501px) {
-            .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
-                grid-template-columns: 2fr repeat(4,1fr) 2fr;
+            /* Disposición de Grids más pequeños (6x4 c/u) */
+            .services-grid-ext, .services-grid-int, .services-grid-ges {
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                grid-template-rows: repeat(4,1fr);
             }
-        }
 
-        /* Media query para mantener el aspecto en desktop pequeños */
-        @media screen and (max-width:1024px) {
-            .servicesGrid-Ext, .servicesGrid-Int, .servicesGrid-Ges {
-                grid-template-columns: 0.5fr repeat(4,1fr) 0.5fr;
-            }
-        }
+                /* Media query para mantener el aspecto en desktop grandes */
+                @media screen and (min-width:1501px) {
+                    .services-grid-ext, .services-grid-int, .services-grid-ges {
+                        grid-template-columns: 2fr repeat(4,1fr) 2fr;
+                    }
+                }
+
+                /* Media query para mantener el aspecto en desktop pequeños */
+                @media screen and (max-width:1024px) {
+                    .services-grid-ext, .services-grid-int, .services-grid-ges {
+                        grid-template-columns: 0.5fr repeat(4,1fr) 0.5fr;
+                    }
+                }
 
             /* Sub-grid para Diseño Exterior */
-            .servicesGrid-Ext {
+            .services-grid-ext {
                 height: 50vh;
                 grid-column: 1/2;
                 grid-row: 1/2;
             }
 
             /* Sub-grid para Diseño Interior */
-            .servicesGrid-Int {
+            .services-grid-int {
                 height: 50vh;
                 grid-column: 1/2;
                 grid-row: 2/3;
             }
 
             /* Sub-grid para Gestión de Proyectos */
-            .servicesGrid-Ges {
+            .services-grid-ges {
                 height: 50vh;
                 grid-column: 1/2;
                 grid-row: 3/4;
             }
 
-        /* Ajuste de estilos para las imágenes dentro de Grid */
-        .servicesGrid-Ext-img img {
-            height: 100%;
-            width: 100%;
-            border: 3px solid #ff8c00;
-            border-radius: 100px;
-            border-right: none;
-        }
+                /* Ajuste de estilos para las imágenes dentro de Grid */
+                .services-grid-ext-img img, .services-grid-int-img img, .services-grid-ges-img img {
+                    height: 100%;
+                    width: 100%;
+                    border: 3px solid #ff8c00;
+                    border-radius: 100px;
+                }
 
-        .servicesGrid-Int-img img {
-            height: 100%;
-            width: 100%;
-            border: 3px solid #ff8c00;
-            border-radius: 100px;
-            border-left: none;
-        }
+                .services-grid-ext-img img {
+                    border-right: none;
+                }
 
-        .servicesGrid-Ges-img img {
-            height: 100%;
-            width: 100%;
-            border: 3px solid #ff8c00;
-            border-radius: 100px;
-            border-right: none;
-        }
+                .services-grid-int-img img {
+                    border-left: none;
+                }
 
-        /* Ubicación de Diseño Exterior */
-        .servicesGrid-Ext-img {
-            grid-column: 2/5;
-            grid-row: 1/5;
-        }
+                .services-grid-ges-img img {
+                    border-right: none;
+                }
 
-        .servicesGrid-Ext-text {
-            text-align: right;
-            background-color: white;
-            border-radius: 50px;
-            opacity: 85%;
-            grid-column: 4/6;
-            grid-row: 2/4;
-        }
-        /* Fin de ubicación de Diseño Exterior */
+                /* Ajuste de estilos para los textos dentro de Grid */
+                .services-grid-ext-text h3, .services-grid-int-text h3, .services-grid-ges-text h3 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
 
-        /* Ubicación de Diseño Interior */
-        .servicesGrid-Int-img {
-            grid-column: 3/6;
-            grid-row: 1/5;
-        }
+                /* Ubicación de Diseño Exterior */
+                .services-grid-ext-img {
+                    grid-column: 2/5;
+                    grid-row: 1/5;
+                }
 
-        .servicesGrid-Int-text {
-            text-align: left;
-            background-color: white;
-            border-radius: 50px;
-            opacity: 85%;
-            grid-column: 2/4;
-            grid-row: 2/4;
-        }
-        /* Fin de ubicación de Diseño Interior */
+                .services-grid-ext-text {
+                    text-align: right;
+                    background-color: white;
+                    border-radius: 50px;
+                    opacity: 85%;
+                    grid-column: 4/6;
+                    grid-row: 2/4;
+                }
+                /* Fin de ubicación de Diseño Exterior */
 
-        /* Ubicación de Gestión de Proyectos */
-        .servicesGrid-Ges-img {
-            grid-column: 2/5;
-            grid-row: 1/5;
-        }
+                /* Ubicación de Diseño Interior */
+                .services-grid-int-img {
+                    grid-column: 3/6;
+                    grid-row: 1/5;
+                }
 
-        .servicesGrid-Ges-text {
-            text-align: right;
-            background-color: white;
-            border-radius: 50px;
-            opacity: 85%;
-            grid-column: 4/6;
-            grid-row: 2/4;
-        }
-        /* Fin de ubicación de Gestión de Proyectos */
+                .services-grid-int-text {
+                    text-align: left;
+                    background-color: white;
+                    border-radius: 50px;
+                    opacity: 85%;
+                    grid-column: 2/4;
+                    grid-row: 2/4;
+                }
+                /* Fin de ubicación de Diseño Interior */
+
+                /* Ubicación de Gestión de Proyectos */
+                .services-grid-ges-img {
+                    grid-column: 2/5;
+                    grid-row: 1/5;
+                }
+
+                .services-grid-ges-text {
+                    text-align: right;
+                    background-color: white;
+                    border-radius: 50px;
+                    opacity: 85%;
+                    grid-column: 4/6;
+                    grid-row: 2/4;
+                }
+                /* Fin de ubicación de Gestión de Proyectos */
 
     /* proyectos.html */
         /* Grid para contener las imágenes de los proyectos */
@@ -509,65 +523,65 @@ p {
             padding: 25px 50px;
         }
 
-        /* Ajuste del tamaño de las imágenes */
-        .project-grid-item {
-            width: 100%;
-            height: 100%;
-        }
+            /* Ajuste del tamaño de las imágenes */
+            .project-grid-item {
+                width: 100%;
+                height: 100%;
+            }
 
-        /* Efecto de claridad y aumento de tamaño al pasar el mouse por sobre las imágenes */
-        .project-grid-item:hover {
-            opacity: 0.8;
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
+                /* Efecto de claridad y aumento de tamaño al pasar el mouse por sobre las imágenes */
+                .project-grid-item:hover {
+                    opacity: 0.8;
+                    transform: scale(1.05);
+                    transition: transform 0.3s ease;
+                }
 
-        /* Asignación de posiciones para las imágenes */
-        .one {
-            grid-column: 1/3;
-            grid-row: 1/3;
-        }
+            /* Asignación de posiciones para las imágenes */
+            .one {
+                grid-column: 1/3;
+                grid-row: 1/3;
+            }
 
-        .two {
-            grid-column: 3/4;
-            grid-row: 1/2;
-        }
+            .two {
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
 
-        .three {
-            grid-column: 3/4;
-            grid-row: 2/3;
-        }
+            .three {
+                grid-column: 3/4;
+                grid-row: 2/3;
+            }
 
-        .four {
-            grid-column: 1/2;
-            grid-row: 3/4;
-        }
+            .four {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
 
-        .five {
-            grid-column: 2/3;
-            grid-row: 3/4;
-        }
+            .five {
+                grid-column: 2/3;
+                grid-row: 3/4;
+            }
 
-        .six {
-            grid-column: 3/4;
-            grid-row: 3/4;
-        }
+            .six {
+                grid-column: 3/4;
+                grid-row: 3/4;
+            }
 
-        .seven {
-            grid-column: 2/4;
-            grid-row: 4/6;
-        }
+            .seven {
+                grid-column: 2/4;
+                grid-row: 4/6;
+            }
 
-        .eight {
-            grid-column: 1/2;
-            grid-row: 5/6;
-        }
+            .eight {
+                grid-column: 1/2;
+                grid-row: 5/6;
+            }
 
-        .nine {
-            grid-column: 1/2;
-            grid-row: 4/5;
-        }
-        /* Fin de asignación de ubicación para las imágenes */
+            .nine {
+                grid-column: 1/2;
+                grid-row: 4/5;
+            }
+            /* Fin de asignación de ubicación para las imágenes */
 
     /* contacto.html */
         /* Sección primera: información */
@@ -587,11 +601,13 @@ p {
 
                     .contact-info-data-item {
                         display: flex;
+                        text-align: right;
                         gap: 25px;
                         padding: 25px 0;
                     }
 
                 .contact-info-map {
+                    padding-right: 15%;
                     text-align: left;
                     width: 50%;
                 }
@@ -607,12 +623,33 @@ p {
                     /* Cada contenedor se lleva el 50% del espacio */
                     width: 50%;
                     display: flex;
-                    /* align-items: center; */
                 }
 
                     .contact-form-photo img {
                         /* La imagen se lleva el 100% de su contenedor */
                         width: 100%;
+                    }
+
+                    /* Media query para mantener el aspecto en desktop pequeños */
+                    @media screen and (max-width:1024px) {
+                        .contact-form-photo {
+                            align-items: center;
+                        }
+
+                        .contact-form-photo img {
+                            height: 80%;
+                        }
+                    }
+
+                    /* Media query para mantener el aspecto en desktop medianos */
+                    @media screen and (min-width:1025px) and (max-width:1275px) {
+                        .contact-form-photo {
+                            align-items: center;
+                        }
+                        
+                        .contact-form-photo img {
+                            height: 90%;
+                        }
                     }
 
                 .contact-form-box {
@@ -752,57 +789,54 @@ footer {
     grid-template-rows: repeat(2,1fr);
 }
 
-/* Asignación de posiciones de los elementos */
-.fb {
-    text-align: right;
-    grid-column: 4/5;
-    grid-row: 1/2;
-}
+    /* Asignación de posiciones de los elementos */
+    .fb {
+        text-align: right;
+        grid-column: 4/5;
+        grid-row: 1/2;
+    }
 
-.ig {
-    text-align: center;
-    grid-column: 5/6;
-    grid-row: 1/2;
-}
+    .ig {
+        text-align: center;
+        grid-column: 5/6;
+        grid-row: 1/2;
+    }
 
-.in {
-    text-align: left;
-    grid-column: 6/7;
-    grid-row: 1/2;
-}
+    .in {
+        text-align: left;
+        grid-column: 6/7;
+        grid-row: 1/2;
+    }
 
-.contact {
-    text-align: right;
-    grid-column: 9/10;
-    grid-row: 2/3;
-    /* Espaciado del borde inferior derecho */
-    margin-right: 25px;
-    margin-bottom: 25px;
-}
+    .contact {
+        text-align: right;
+        grid-column: 9/10;
+        grid-row: 2/3;
+        /* Espaciado del borde inferior derecho */
+        margin-right: 25px;
+        margin-bottom: 25px;
+    }
 
-.copyright {
-    text-align: center;
-    grid-column: 4/7;
-    grid-row: 2/3;
-}
-/* Fin de asignación de posiciones de los elementos */
+    .copyright {
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 0;
+        grid-column: 4/7;
+        grid-row: 2/3;
+    }
+    /* Fin de asignación de posiciones de los elementos */
 
 /* Tamaño de los íconos de redes sociales */
 .footer-social {
     width: 30px;
 }
 
-/* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
-.footer-social:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-    transition: transform 0.3 ease;
-}
-
-.copyright {
-    font-size: 11px;
-    margin-bottom: 0;
-}
+    /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
+    .footer-social:hover {
+        transform: scale(1.2);
+        opacity: 0.8;
+        transition: transform 0.3 ease;
+    }
 
 /*-----------------------------------------------------------------*/
 /* ESTILOS PARA LAS IMÁGENES --------------------------------------*/
@@ -825,140 +859,248 @@ footer {
 @media only screen and (max-width:480px) {
 
     /* BARRA DE NAVEGACIÓN */
-    header {
-        height: 50px;
-    }
-    
-    .navBar-container img {
-        display: none;
-    }
-    
-    .title {
-        display: none;
-    }
+        header {
+            height: 50px;
+        }
 
-    nav ul li a {
-        display: none;
-    }
+        .navbar-title {
+            height: 50px;
+            margin-left: 15px;
+        }
 
-    .navBar-container {
-        height: 50px;
-    }
+            /* Toda etiqueta con la propiedad .mobile se hará visible */
+            .mobile {
+                display: block;
+                font-size: 1.5em;
+                font-weight: bold;
+                color: black;
+                text-decoration: none;
+            }
 
-    .mobile {
-        display: block;
-        margin-left: 25px;
-    }
+            .navbar-title img {
+                display: none;
+            }
+        
+            .title {
+                display: none;
+            }
 
-    .hamburger {
-        color: black;
-        display: flex;
-        align-items: center;
-        margin: 10px 15px 5px 10px;
-        padding: 0px 20px;
-        border-radius: 8px;
-        cursor: pointer; /* Podría eliminarse al no haber puntero en celulares */
-    }
+        /* Los enlaces, ahora dentro del menú hamburguesa, se verán centrados */
+        .navbar-links {
+            justify-content: center;
+            padding: 15px 0;
+        }
 
-    .hamburger p {
-        font-weight: bolder;
-    }
+            .nav-item {
+                padding-top: 5px;
+            }
 
     /* CUERPO DE LAS PÁGINAS */
+
+        .page-title {
+            font-size: 1.2em;
+            padding-left: 10px;
+        }
+
+        /* index.html */
+            .services-container {
+                margin: 25px 0;
+            }
+
+                .services-item {
+                    padding: 15px 25px;
+                }
 
         /* proyectos.html */
         .project-grid-container {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(9,1fr);
-            padding: 0 10px;
+            padding: 0 10px 25px 10px;
         }
 
-        .one {
-            grid-column: 1/2;
+            .one {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .two {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .three {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+
+            .four {
+                grid-column: 1/2;
+                grid-row: 4/5;
+            }
+
+            .five {
+                grid-column: 1/2;
+                grid-row: 5/6;
+            }
+
+            .six {
+                grid-column: 1/2;
+                grid-row: 6/7;
+            }
+
+            .seven {
+                grid-column: 1/2;
+                grid-row: 7/8;
+            }
+
+            .eight {
+                grid-column: 1/2;
+                grid-row: 8/9;
+            }
+
+            .nine {
+                grid-column: 1/2;
+                grid-row: 9/10;
+            }
+
+        /* contacto.html */
+        .contact-info {
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+        }
+        
+            .contact-info-data {
+                width: 100%;
+                padding: 0 5%;
+            }
+
+            .contact-info-map {
+                width: 100%;
+                padding-right: 0;
+            }
+
+        .contact-form {
+            margin: 25px 0;
+        }
+
+            .contact-form-photo {
+                display: none;
+            }
+
+            .contact-form-box {
+                width: 100%;
+            }
+
+                .contact-form-box-form {
+                    padding: 0 25px;
+                }
+
+        /* exito.html */
+        .success {
+            width: 90%;
+            margin: 0 5%;
+            border: 1px solid #ff8c00;
+            box-shadow: 5px 5px 5px grey;
+        }
+                            
+            .success-logo img {
+                width: 125px;
+            }
+
+            .success h1 {
+                font-size: 1.5em;
+            }
+
+            .success h2 {
+                font-size: 0.8em;
+            }
+
+            .success p {
+                font-size: 0.6em;
+            }
+            
+                .success-redirect {
+                    color: #ff8c00;
+                }
+
+    /* FOOTER */
+    /* Asignación de posiciones de los elementos */
+        .fb {
+            grid-column: 3/4;
             grid-row: 1/2;
         }
 
-        .two {
-            grid-column: 1/2;
+        .ig {
+            grid-column: 5/6;
+            grid-row: 1/2;
+        }
+
+        .in {
+            grid-column: 7/8;
+            grid-row: 1/2;
+        }
+
+        .contact {
+            display: none;
+        }
+
+        .copyright {
+            text-align: center;
+            grid-column: 1/10;
             grid-row: 2/3;
         }
-
-        .three {
-            grid-column: 1/2;
-            grid-row: 3/4;
-        }
-
-        .four {
-            grid-column: 1/2;
-            grid-row: 4/5;
-        }
-
-        .five {
-            grid-column: 1/2;
-            grid-row: 5/6;
-        }
-
-        .six {
-            grid-column: 1/2;
-            grid-row: 6/7;
-        }
-
-        .seven {
-            grid-column: 1/2;
-            grid-row: 7/8;
-        }
-
-        .eight {
-            grid-column: 1/2;
-            grid-row: 8/9;
-        }
-
-        .nine {
-            grid-column: 1/2;
-            grid-row: 9/10;
-        }
+        /* Fin de asignación de posiciones de los elementos */
 }
 
 /*-----------------------------------------------------------------*/
 /* MEDIA QUERIES | TABLETS   --------------------------------------*/
 
-@media only screen and (max-width:855px) and (min-width:481px) {
-/* 855px es el ancho mínimo que soporta la NavBar manteniendo todos los links visibles */
+@media only screen and (max-width:991px) and (min-width:481px) {
 
     /* BARRA DE NAVEGACIÓN */
-    header {
-        height: 75px;
-    }
-    
-    .navBar-container {
-        height: 75px;
-    }
+        header {
+            height: 75px;
+        }
 
-    .navBar-container img {
-        height: 75px;
-        width: 75px;
-        margin: 0 10px;
-    }
+            .logo {
+                height: 75px;
+                width: 75px;
+            }
 
-    nav ul li a {
-        display: none;
-    }
+            .title {
+                display: none;
+            }
 
-    .hamburger {
-        color: #ff8c00;
-        display: flex;
-        align-items: center;
-        margin: 10px 15px;
-        padding: 0px 20px;
-        border-radius: 8px;
-        cursor: pointer; /* Podría eliminarse al no haber puntero en tablets */
-    }
+                .tablet {
+                    display: block;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: black;
+                    text-decoration: none;
+                }
 
-    .hamburger p {
-        font-weight: bolder;
-    }
+                    .tablet p {
+                        font-family: "anta";
+                        line-height: 1;
+                    }
+
+            /* Los enlaces, ahora dentro del menú hamburguesa, se verán centrados */
+            .navbar-links {
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+                .nav-item {
+                    padding-top: 5px;
+                }
 
     /* CUERPO DE LAS PÁGINAS */
+
+        .page-title {
+            padding-left: 15px;
+            font-size: 1.2em;
+        }
 
         /* proyectos.html */
         .project-grid-container {
@@ -966,48 +1108,68 @@ footer {
             grid-template-rows: repeat(9,1fr);
         }
 
-        .one {
-            grid-column: 1/5;
-            grid-row: 1/3;
+            .one {
+                grid-column: 1/5;
+                grid-row: 1/3;
+            }
+
+            .two {
+                grid-column: 1/3;
+                grid-row: 3/4;
+            }
+
+            .three {
+                grid-column: 3/5;
+                grid-row: 3/4;
+            }
+
+            .four {
+                grid-column: 1/5;
+                grid-row: 4/6;
+            }
+
+            .five {
+                grid-column: 1/3;
+                grid-row: 6/7;
+            }
+
+            .six {
+                grid-column: 3/5;
+                grid-row: 6/7;
+            }
+
+            .seven {
+                grid-column: 1/5;
+                grid-row: 7/9;
+            }
+
+            .eight {
+                grid-column: 1/3;
+                grid-row: 9/10;
+            }
+
+            .nine {
+                grid-column: 3/5;
+                grid-row: 9/10;
+            }
+
+        /* contacto.html */
+        .contact-form {
+            margin: 50px 0;
         }
 
-        .two {
-            grid-column: 1/3;
-            grid-row: 3/4;
-        }
+            .contact-form-photo {
+                display: none;
+            }
 
-        .three {
-            grid-column: 3/5;
-            grid-row: 3/4;
-        }
+            .contact-form-box {
+                width: 100%;
+            }
 
-        .four {
-            grid-column: 1/5;
-            grid-row: 4/6;
-        }
-
-        .five {
-            grid-column: 1/3;
-            grid-row: 6/7;
-        }
-
-        .six {
-            grid-column: 3/5;
-            grid-row: 6/7;
-        }
-
-        .seven {
-            grid-column: 1/5;
-            grid-row: 7/9;
-        }
-
-        .eight {
-            grid-column: 1/3;
-            grid-row: 9/10;
-        }
-
-        .nine {
-            grid-column: 3/5;
-            grid-row: 9/10;
+    /* FOOTER */
+        .copyright {
+            text-align: center;
+            grid-column: 1/10;
+            grid-row: 2/3;
         }
 }

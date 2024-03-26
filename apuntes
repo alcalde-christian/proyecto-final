@@ -4,8 +4,9 @@ Pre2:
     Comentarios conteniendo "Pre2" indican una modificación del código sobre algo que ya estaba presentado en la primera pre-entrega.
 ---------------------------------------------------------------------------
 Falta resolver:
-Dar color a botones de carousel **NO**
 Probar carousel indicando alto y ancho de imágenes
-Ajustar index.html a pantallas más pequeñas
-Ajustar footer para pantallas de celulares
+Ajustar index.html a pantallas más pequeñas **OK**
+Ajustar footer para pantallas de celulares **OK**
+Optimizar el uso de fuentes usándolas de forma online
+Normalizar el uso de <h1> en Navbar **OK**
 ---------------------------------------------------------------------------

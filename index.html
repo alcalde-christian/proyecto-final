@@ -17,52 +17,61 @@
 </head>
 <body>
     <header>
-        <!-- NavBar con logo, texto y link a los distintos HTML de la página -->
-        <nav class="navBar-container"> <!-- Pre2: se agregó una clase a la NavBar para mejor identificación -->
-
-            <div class="navTitle">
-                <!-- Logo del Navbar -->
-                <img src="./img/logotop.png" alt="logo" class="logo">
-                <!-- Título del Navbar -->
-                <h1 class="title">ESTUDIO TÉCNICO DE ARQUITECTURA</h1>
-                <!-- Título del Navbar (sólo versión mobile) -->
-                <h1 class="mobile">e.t.<span class="detail">arquitectura</span>_</h1>
-            </div>
-
-            <!-- Tabla desordenada para agregar los distintos links relativos -->
-            <ul class="navLinks"> 
-                <li>
-                    <!-- Estilo en línea. Ver "apuntes" línea 1 -->
-                    <a class="navLinks-items highlight" href="./index.html" style="text-decoration: underline;">
-                        INICIO
+        <!-- Navbar importada de Bootstrap -->
+        <!-- Utiliza las clases para eliminar padding, fijar arriba y establecer color (blanco) -->
+        <nav class="fixed-top navbar navbar-expand-lg p-0 bg-white">
+            <!-- Contenedor padre del navbar -->
+            <!-- Utiliza las clases para eliminar padding -->
+            <div class="container-fluid p-0">
+                <!-- Flex item con logo y título -->
+                <div class="navbar-title">
+                    <!-- Versión estándar para desktop con imagen y título-->
+                    <img src="./img/logotop.png" alt="Logo de la página" class="logo">
+                    <h1 class="title">
+                        ESTUDIO TÉCNICO DE ARQUITECTURA
+                    </h1>
+                    <!-- Versión mobile (sólo título) -->
+                    <a class="mobile m-0" href="./index.html">
+                        e.t.<span class="detail">(arquitectura)</span>_
                     </a>
-                </li>
-                <li>
-                    <a class="navLinks-items highlight" href="./pages/nosotros.html">
-                        NOSOTROS
+                    <!-- Versión tablet con imagen y título -->
+                    <a class="tablet m-0" href="./index.html">
+                        <p class="m-0">
+                            ESTUDIO TÉCNICO
+                        </p>
+                        <p class="m-0">
+                            DE ARQUITECTURA
+                        </p>
                     </a>
-                </li>
-                <li>
-                    <a class="navLinks-items highlight" href="./pages/servicios.html">
-                        SERVICIOS
-                    </a>
-                </li>
-                <li>
-                    <a class="navLinks-items highlight" href="./pages/proyectos.html">
-                        PROYECTOS
-                    </a>
-                </li>
-                <li>
-                    <a class="navLinks-items highlight" href="./pages/contacto.html">
-                        CONTACTO
-                    </a>
-                </li>
-            </ul>
-            <!-- Menú hamburguesa (sólo versiones tablet y mobile) -->
-            <div class="hamburger">
-                <p>
-                    &#9776
-                </p>
+                </div>
+                <!-- Flex ítem con botón -->
+                <!-- Menú hamburguesa de Bootstrap -->
+                <button class="hamburger navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <p class="m-0">
+                        &#9776
+                    </p>
+                </button>
+                <!-- Flex ítem con links -->
+                <!-- Links a las distintas páginas del proyecto -->
+                <div class="navbar-links collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link highlight p-0" href="./index.html" style="text-decoration: underline;">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link highlight p-0" href="./pages/nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link highlight p-0" href="./pages/servicios.html">SERVICIOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link highlight p-0" href="./pages/proyectos.html">PROYECTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link highlight p-0" href="./pages/contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
