@@ -911,6 +911,114 @@ footer {
                     padding: 15px 25px;
                 }
 
+        /* nosotros.html */
+            /* Sección primera: imágenes */
+            /* Cambio en disposición del grid */
+            .us-main-grid-container {
+                grid-template-rows: 1fr;
+            }
+
+                /* Ubicación de la imagen princiapl */
+                .us-main-photo-office {
+                    grid-column: 1/10;
+                    grid-row: 1/1;
+                }
+
+                /* Se ocultan los elementos secundarios */
+                .us-main-photo-office-bw {
+                    display: none;
+                }
+                
+                .us-main-box-blank {
+                    display: none;
+                }
+
+                .us-main-box {
+                    display: none;
+                }
+
+            /* Sección segunda: objetivos */
+            /* Cambios para reducir espacios en blanco */
+            .us-goals-container {
+                margin: 25px 0;
+            }
+
+                .us-goals-title {
+                    font-size: 1.2em;
+                    padding-bottom: 10px;
+                }
+
+                /* El texto ahora se ubica uno debajo del otro */
+                .us-goals-text {
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 25px;
+                }
+
+                    .us-goals-text-left, .us-goals-text-right {
+                        width: 100%;
+                        padding: 0 20px;
+                        gap: 25px;
+                    }
+
+                        .us-goals-text-left p, .us-goals-text-right p {
+                            margin: 0;
+                        }
+
+            /* Sección tercera: cita */
+            /* Cambios en los estilos de la cita para adaptarse a la pantalla */
+            .us-message {
+                padding: 10px 50px;
+                font-size: 1.5em;
+            }
+
+            /* Sección cuarta: equipo */
+            .us-team {
+                margin: 25px 0;
+            }
+
+                .us-team-title {
+                    font-size: 1.2em;
+                    padding-bottom: 10px;
+                }
+
+                .us-team-info {
+                    gap: 25px;
+                }
+
+                    /* Ahora los flex items se ubican uno debajo del otro */
+                    .us-team-info-partner {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                        margin: 0 10px;
+                    }
+
+                        /* Propiedad order para ubicar la foto por encima del texto */
+                        .us-team-info-data {
+                            width: 100%;
+                            order: 2;
+                        }
+
+                            .us-team-info-data p {
+                                text-align: center;
+                            }
+
+                            .us-team-info-data-name {
+                                font-size: 1.2em;
+                            }
+
+                        /* Centrado para evitar posiciones erróneas en diferentes pantallas */
+                        .us-team-info-photo {
+                            justify-content: center;
+                        }
+
+            /* Sección quinta: foto final */
+                .us-final img {
+                    height: 250px;
+                    margin-bottom: 25px;
+                }
+
         /* servicios.html */
             .services-grid-container {
                 /* Espaciado entre los distintos servicios */
@@ -1141,6 +1249,48 @@ footer {
             padding-left: 15px;
             font-size: 1.2em;
         }
+
+        /* nosotros.html */
+            /* Asignación de ubicación para el recuadro blanco contenedor de texto */
+            .us-main-box {
+                grid-column: 2/6;
+            }
+
+                /* Cambio en el tamaño de fuente de la cita */
+                .us-main-box-quote {
+                    font-size: 1.2em;
+                }
+
+            /* Cambio en los márgenes para reducir espacios vacíos */
+            .us-goals-container {
+                margin: 50px 0 25px 0;
+            }
+
+                /* Cambio en padding para adaptar mejor el texto a la pantalla */
+                .us-goals-text-left, .us-goals-text-right {
+                    padding: 25px;
+                }
+
+            /* Cambio de padding y tamaño de fuente para adaptar la cita a la pantalla */
+            .us-message {
+                padding: 25px 75px;
+                font-size: 1.5em;
+            }
+
+            /* Cambio en los márgenes (y gap) para reducir espacios vacíos */
+            .us-team {
+                margin: 50px 0 25px 0;
+            }
+
+                .us-team-info-partner {
+                    gap: 25px;
+                }
+
+            /* Cambio en altura de imagen y margen inferior para reducir espacios vacíos */
+            .us-final img {
+                height: 250px;
+                margin-bottom: 25px;
+            }
 
         /* servicios.html */
         .services-grid-ext, .services-grid-int, .services-grid-ges {
