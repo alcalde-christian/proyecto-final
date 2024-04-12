@@ -1,0 +1,111 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins para utilizar en grid
+@import "../abstracts/mixins";
+
+/* Estilos de footer ------------------------------------------------------------------------------------------ */
+
+// Color degradado del footer
+footer {
+    background: linear-gradient(to bottom, $sub-color, $main-color);
+
+    // Display: grid para organizar los elementos del footer
+    .footer-container {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(2,1fr);
+
+        // Asignación de las posiciones de los elementos a través de mixins
+        .fb {
+            /* Posición del ícono de Facebook */
+            text-align: right;
+            @include grid ("4/5","1/2");
+        }
+        .ig {
+            /* Posición del ícono de Instagram */
+            text-align: center;
+            @include grid ("5/6","1/2");
+        }
+        .in {
+            /* Posición del ícono de LinkedIn */
+            text-align: left;
+            @include grid ("6/7","1/2");
+        }
+        .contact {
+            /* Posición del ícono de contacto */
+            text-align: right;
+            @include grid ("9/10","2/3");
+            margin-right: 25px;
+            margin-bottom: 25px;
+        }
+        .copyright {
+            /* Posición del copyright */
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 0;
+            @include grid ("4/7","2/3");
+        }
+        // Fin de asignación de posiciones
+            a {
+                .footer-social {
+                    /* Tamaño de los íconos de redes sociales */
+                    width: 30px;
+                }
+            }
+    }
+}
+
+// Pseudoclase :hover no funciona si utilizo nesting
+.footer-social:hover {
+    /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
+    transform: scale(1.2);
+    opacity: 0.8;
+    transition: transform 0.3 ease;
+}
+
+// Media queries
+/* Media query del footer para celulares */
+
+@media only screen and (max-width:480px) {
+    footer {
+        .footer-container {
+            .fb {
+                /* Asignación de posiciones de los elementos */
+                @include grid ("3/4","1/2");
+            }
+        
+            .ig {
+                @include grid ("5/6","1/2");
+            }
+        
+            .in {
+                @include grid ("7/8","1/2");
+            }
+        
+            .contact {
+                display: none;
+            }
+        
+            .copyright {
+                text-align: center;
+                @include grid ("1/10","2/3");
+                /* Fin de asignación de posiciones de los elementos */
+            }
+        }
+    }
+}
+
+/* Media query del header para tablets */
+
+@media only screen and (max-width:991px) and (min-width:481px) {
+    footer {
+        .footer-container {
+            .copyright {
+                text-align: center;
+                @include grid ("1/10","2/3");
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins para utilizar flexbox
+@import "../abstracts/mixins";
+
+/* Estilos de header ------------------------------------------------------------------------------------------ */
+
+/* Altura para el header pre-establecida para evitar errores de visualización */
+header {
+    height: 100px;
+    .navbar {
+        .container-fluid {
+            // Contenedor padre de logo y título
+            .navbar-title {
+                @include flex;
+                .logo {
+                    /* Tamaño del logo en Navbar (sólo desktop) */
+                    width: 100px;
+                }
+                .title {
+                    /* Estilos para el título, pisando los asignados por Bootstrap */
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin: 0;
+                }
+                .mobile, .tablet {
+                    /* Oculta el título de la página que sólo se verá en versiones mobile o tablet */
+                    display: none;
+                }
+            }
+            .hamburger {
+                /* Estilos para el menú hamburguesa que sólo será visible en tablet y mobile */
+                border: none;
+                font-size: 1.5em;
+                font-weight: bold;
+                color: $font-color;
+                margin-right: 15px;
+            }
+            .collapsing {
+                /* Estilos para el menú hamburguesa desplegable cuando está en transición */
+                @include flex;
+            }
+            .show {
+                /* Estilos para el menú hamburguesa cuando está visible */
+                @include flex;
+            }
+            // Contenedor padre de enlaces
+            .navbar-links {
+                justify-content: right;
+                .navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            /* Separación y color de enlaces */
+                            color: $font-color;
+                            margin: 0px 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media queries
+/* Media query del header para celulares */
+
+@media only screen and (max-width:480px) {
+    header {
+        /* En Mobile el navbar se mostrará en tamaño más pequeño */
+        height: 50px;
+        .navbar {
+            .container-fluid {
+                .navbar-title {
+                    height: 50px;
+                    margin-left: 15px;
+
+                    .mobile {
+                        /* Toda etiqueta con la propiedad .mobile se hará visible */
+                        display: block;
+                        @include bold15;
+                        color: $font-color;
+                        text-decoration: none;
+                    }
+
+                    img {
+                        display: none;
+                    }
+
+                    .title {
+                        display: none;
+                    }
+                }
+
+                .navbar-links {
+                    /* Centrado de los enlaces dentro del menú hamburguesa */
+                    justify-content: center;
+                    padding: 15px 0;
+                    .navbar-nav {
+                        .nav-item {
+                            text-align: center;
+                            padding-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media query del header para tablets */
+
+@media only screen and (max-width:991px) and (min-width:481px) {
+    header {
+        /* En tablet el Navbar tendrá un tamaño mediano */
+        height: 75px;
+        .navbar {
+            .container-fluid {
+                .navbar-title {
+                    .logo {
+                        height: 75px;
+                        width: 75px;
+                    }
+
+                    .title {
+                        display: none;
+                    }
+
+                    .tablet {
+                        /* Toda etiqueta con la propiedad .tablet se hará visible */
+                        display: block;
+                        @include bold15;
+                        color: $font-color;
+                        text-decoration: none;
+
+                        p {
+                            font-family: "anta";
+                            line-height: 1;
+                        }
+                    }
+                }
+
+                .navbar-links {
+                    /* Centrado de los enlaces dentro del menú hamburguesa */
+                    justify-content: center;
+                    padding: 15px 0;
+                    .navbar-nav {
+                        .nav-item {
+                            text-align: center;
+                            padding-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

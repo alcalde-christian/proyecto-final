@@ -1,0 +1,55 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins
+@import "../abstracts/mixins";
+
+/* Estilos generales ------------------------------------------------------------------------------------------ */
+
+/* Para resaltar el fondo de los links al pasar el ratón sobre ellos */
+.highlight:hover {
+    background-color: $main-color;
+    transition: background-color 0.5s ease;
+}
+
+// Detalle en $main-color para donde se necesite aplicar mediante etiqueta <span>
+.detail {
+    color: $main-color;
+}
+
+// Detalle en negrita para las etiquetas que lo requieran
+.bold {
+    font-family: "cantarell";
+    font-weight: bold;
+}
+
+/* Estilos de títulos de páginas */
+.page-title {
+    font-family: "anta";
+    @include bold15;
+    padding: 0px 0px 10px 30px;
+    margin: 0;
+}
+
+/* Fuente para todas las etiquetas <p> */
+p {
+    font-family: "cantarell";
+}
+
+// Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Media query para celulares */
+
+@media only screen and (max-width:480px) {
+    .page-title {
+        font-size: 1.2em;
+        padding-left: 10px;
+    }
+}
+
+/* Media query para tablets */
+
+@media only screen and (max-width:991px) and (min-width:481px) {
+    .page-title {
+        padding-left: 15px;
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,81 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins
+@import "../abstracts/mixins";
+
+/* success.html ............................................................................................... */
+.success {
+    /* Estilos de la caja contenedora principal */
+    @include flex-col;
+    align-items: center;
+    width: 50%;
+    margin: 0 25%;
+    position: absolute;
+    top: 50px;
+    border: 1px solid $main-color;
+    box-shadow: 5px 5px 5px grey;
+    .success-logo {
+        img {
+            width: 200px;
+        }
+    }
+    .success-item {
+        /* Para mantener el texto centrado en todo tipo de pantallas */
+        text-align: center;
+        padding: 0 50px;
+        .success-redirect {
+            color: $main-color;
+        }
+    }
+    h1 {
+        /* Estilo de flex-item */
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    h2 {
+        /* Estilo de flex-item */
+        font-size: 1.1em;
+        font-family: "cantarell";
+        margin-bottom: 25px;
+    }
+    p {
+        /* Estilo de flex-item */
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+}
+
+// Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Media query de success.html para celulares */
+
+@media only screen and (max-width:480px) {
+    /* exito.html */
+    .success {
+        width: 90%;
+        margin: 0 5%;
+        border: 1px solid $main-color;
+        box-shadow: 5px 5px 5px grey;
+
+        .success-logo {
+            img {
+                width: 125px;
+            }
+        }
+
+        .success h1 {
+            font-size: 1.5em;
+        }
+
+        .success h2 {
+            font-size: 0.8em;
+        }
+
+        .success p {
+            font-size: 0.6em;
+
+            .success-redirect {
+                color: $main-color;
+            }
+        }
+    }
+}

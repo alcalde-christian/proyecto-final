@@ -60,16 +60,16 @@
                             <a class="nav-link highlight p-0" href="../index.html">INICIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link highlight p-0" href="./nosotros.html">NOSOTROS</a>
+                            <a class="nav-link highlight p-0" href="./us.html">NOSOTROS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link highlight p-0" href="./servicios.html">SERVICIOS</a>
+                            <a class="nav-link highlight p-0" href="./services.html" style="text-decoration: underline;">SERVICIOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link highlight p-0" href="./proyectos.html" style="text-decoration: underline;">PROYECTOS</a>
+                            <a class="nav-link highlight p-0" href="./projects.html">PROYECTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link highlight p-0" href="./contacto.html">CONTACTO</a>
+                            <a class="nav-link highlight p-0" href="./contact.html">CONTACTO</a>
                         </li>
                     </ul>
                 </div>
@@ -79,19 +79,60 @@
     <main>
         <!-- Etiqueta <span> para cambiar el color del guión bajo -->
         <h2 class="page-title"> <!-- Pre2: nueva clase para los títulos de cada página -->
-            PROYECTOS<span class="detail">_</span>
+            SERVICIOS<span class="detail">_</span>
         </h2>
-        <!-- Grid para ordenar las distintas imágenes del cuerpo de la página -->
-        <section class="project-grid-container">
-            <img src="../img/proy1.jpg" alt="Proyecto uno" class="project-grid-item one">
-            <img src="../img/proy2.jpg" alt="Proyecto dos" class="project-grid-item two">
-            <img src="../img/proy3.jpg" alt="Proyecto tres" class="project-grid-item three">
-            <img src="../img/proy4.jpg" alt="Proyecto cuatro" class="project-grid-item four">
-            <img src="../img/proy5.jpg" alt="Proyecto cinco" class="project-grid-item five">
-            <img src="../img/proy6.jpg" alt="Proyecto seis" class="project-grid-item six">
-            <img src="../img/proy7.jpg" alt="Proyecto siete" class="project-grid-item seven">
-            <img src="../img/proy8.jpg" alt="Proyecto ocho" class="project-grid-item eight">
-            <img src="../img/proy9.jpg" alt="Proyecto nueve" class="project-grid-item nine">
+
+        <!-- Cuerpo de este html. Quizás incorporar <section> para aplicar Flexbox -->
+        <!-- Cada imagen tiene ID para redirigir al usuario desde las imágenes en index.html -->
+        <section class="services-grid-container" id="Exterior">
+            <section class="services-grid-ext">
+                <div class="services-grid-ext-img">
+                    <img src="../img/servExt.jpg" alt="Diseño exterior" class="serv">
+                </div>
+                <div class="services-grid-ext-text">
+                    <h3 class="m-0">
+                        DISEÑO EXTERIOR
+                    </h3>
+                    <p class="m-0 services-text">
+                        Transformamos ideas en espacios que inspiran.
+                    </p>
+                    <p class="m-0 services-text">
+                        Desde viviendas familiares hasta complejos urbanos, nuestro equipo de arquitectos trabaja para crear diseños innovadores que reflejen la visión única de cada cliente.
+                    </p>
+                </div>
+            </section>
+            <section class="services-grid-int"  id="Interior">
+                <div class="services-grid-int-img">
+                    <img src="../img/servInt.jpg" alt="Diseño interior" class="serv">
+                </div>
+                <div class="services-grid-int-text">
+                    <h3 class="m-0">
+                        DISEÑO INTERIOR
+                    </h3>
+                    <p class="m-0 services-text">
+                        Cada detalle importa en la creación de espacios interiores que cautivan los sentidos.
+                    </p>
+                    <p class="m-0 services-text">
+                        Desde la distribución del espacio hasta la selección de acabados y mobiliario, nuestro equipo de diseñadores de interiores se dedica a crear ambientes que reflejen la personalidad y el estilo de nuestros clientes.
+                    </p>
+                </div>
+            </section>
+            <section class="services-grid-ges" id="Gestion">
+                <div class="services-grid-ges-img">
+                    <img src="../img/servGes.jpg" alt="Gestión de proyectos" class="serv">
+                </div>
+                <div class="services-grid-ges-text">
+                    <h3 class="m-0">
+                        GESTIÓN DE PROYECTOS
+                    </h3>
+                    <p class="m-0 services-text">
+                        De la concepción a la realidad, nos encargamos de cada etapa del proceso.
+                    </p>
+                    <p class="m-0 services-text">
+                        Nuestra sólida gestión de proyectos garantiza que cada proyecto se complete a tiempo, dentro del presupuesto y con la más alta calidad, mientras mantenemos una comunicación transparente y una atención meticulosa a los detalles.
+                    </p>
+                </div>
+            </section>
         </section>
     </main>
     <!-- Footer a las distintas redes sociales -->
@@ -114,7 +155,7 @@
             </div>
             <div class="footer-item contact">
                 <!-- Ícono que nos dirige a la página de "contacto" -->
-                <a href="../pages/contacto.html">
+                <a href="../pages/contact.html">
                     <!-- Ícono importado a través de Font Awesome -->
                     <i class="fa-solid fa-envelope fa-bounce fa-2xl" style="color: #ffffff;"></i>
                 </a>
@@ -127,7 +168,7 @@
 
     <!-- Script de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
+
     <!-- Script de Font Awesome -->
     <script src="https://kit.fontawesome.com/31d4edc7b8.js" crossorigin="anonymous"></script>
 </body>

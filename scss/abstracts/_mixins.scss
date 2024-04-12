@@ -1,0 +1,52 @@
+@import "./variables";
+
+// Mixin para aplicar en grids
+@mixin grid ($column, $row) {
+    grid-column: unquote($column);
+    grid-row: unquote($row);
+}
+
+// Mixin para aplicar flex (centrado)
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin para aplicar flex en columna
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+// Mixin para imágenes al 100% de ancho y alto
+@mixin img100 {
+    width: 100%;
+    height: 100%;
+}
+
+// Mixin con estilos para citas
+@mixin quote {
+    font-family: "poppins";
+    font-style: italic;
+    font-weight: bold;
+}
+
+// Mixin para textos
+@mixin bold15 {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+// Mixin con estilos para imágenes de services.html
+@mixin services-grid-img-deco {
+    border: 3px solid $main-color;
+    border-radius: 100px;
+}
+
+// Mixin con estilos para texto de services.html
+@mixin services-grid-text-deco {
+    background-color: $sub-color; 
+    border-radius: 50px;
+    opacity: 85%;
+}

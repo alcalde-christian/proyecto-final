@@ -1,0 +1,72 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins
+@import "../abstracts/mixins";
+
+/* Estilos de páginas ----------------------------------------------------------------------------------------- */
+
+/* index.html ................................................................................................. */
+.photo-slide-container {
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    /* Para que el carousel no cambie su tamaño al cambiar la imagen */
+                    height: 90vh;
+                    object-fit: cover;
+                }
+            }
+        }
+        .carousel-control-prev .carousel-control-prev-icon, .carousel-control-next .carousel-control-next-icon {
+            /* Filtro para convertir los botones de "next" y "prev" en el color principal de la página */
+            filter: invert(54%) sepia(41%) saturate(2128%) hue-rotate(0deg) brightness(103%) contrast(103%);
+        }
+    }
+}
+
+.services-container {
+    /* Estilos de la caja contenedora de los servicios ofrecidos */
+    @include flex;
+    flex-wrap: wrap;
+    margin: 25px 30px;
+
+    .services-item {
+        /* Estilos de cada flex-item */
+        text-align: center;
+        padding: 15px 50px;
+        a {
+            .main-services {
+                /* Estilos de las imágenes */
+                width: 100%;
+                height: 250px;
+                /* Padding para utilizar :hover */
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+            }
+        }
+        // Estilos del texto que se encuentra debajo de las imágenes de los servicios ofrecidos
+        h2 {
+            @include bold15;
+            margin: 0;
+        }
+    }
+}
+
+// Pseudoclase :hover no funciona si utilizo nesting
+.main-services:hover {
+    background-color: $main-color;
+    transition: background-color 0.5s ease;
+}
+
+// Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Media query de index.html para celulares */
+
+@media only screen and (max-width:480px) {
+    .services-container {
+        margin: 25px 0;
+
+        .services-item {
+            padding: 15px 25px;
+        }
+    }
+}

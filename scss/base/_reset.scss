@@ -1,0 +1,13 @@
+/* Selector universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Se aplica font-family: "anta" a todo el proyecto. Con html {} lo pisaba Bootstrap */
+    font-family: "anta";
+}
+
+/* Elimina el color predeterminado de los enlaces ya visitados */
+a:visited {
+    color: currentColor;
+}

@@ -1,0 +1,208 @@
+// Import de variables con paleta de colores
+@import "../abstracts/variables";
+// Import de mixins
+@import "../abstracts/mixins";
+
+/* contact.html ............................................................................................... */
+
+/* Sección primera: información */
+.contact-info {
+    @include flex;
+    gap: 25px;
+
+    .contact-info-data {
+        /* Estilos de la sección de información */
+        width: 50%;
+        @include flex-col;
+        justify-content: center;
+        align-items: end;
+
+        .contact-info-data-item {
+            display: flex;
+            text-align: right;
+            gap: 25px;
+            padding: 25px 0;
+        }
+    }
+
+    .contact-info-map {
+        /* Estilos de la sección del mapa */
+        padding-right: 15%;
+        text-align: left;
+        width: 50%;
+    }
+}
+
+/* Sección segunda: formulario */
+.contact-form {
+    display: flex;
+    margin: 100px 0;
+    gap: 25px;
+
+    .contact-form-photo {
+        /* Cada contenedor se lleva el 50% del espacio */
+        width: 50%;
+        display: flex;
+
+        img {
+            /* La imagen ocupa el 100% de su contenedor */
+            width: 100%;
+        }
+    }
+
+    .contact-form-box {
+        /* Cada contenedor se lleva el 50% del espacio */
+        width: 50%;
+        @include flex-col;
+
+        .contact-form-box-title {
+            /* Estilos de la caja contenedora del título del formulario */
+            text-align: center;
+            font-size: 1.3em;
+            padding-bottom: 25px;
+        }
+
+        .contact-form-box-text {
+            /* Estilos de la caja contenedora de texto del form */
+            text-align: center;
+            font-family: "cantarell";
+            padding-bottom: 25px;
+        }
+
+        .contact-form-box-form {
+            /* Estilos de la caja contenedora del form en sí */
+            @include flex-col;
+            padding: 0 25%;
+
+            .contact-form-label {
+                /* Separación de labels */
+                padding: 5px 0;
+            }
+
+            .contact-form-input {
+                input {
+                    /* Estilos de los campos de ingreso de datos */
+                    width: 100%;
+                    height: 2em;
+                    border: none;
+                    font-family: "cantarell";
+                    border-bottom: 1px solid $main-color;
+                }
+
+                textarea {
+                    /* Estilos del área de mensaje */
+                    width: 100%;
+                    font-family: "cantarell";
+                    border: none;
+                    border-bottom: 1px solid $main-color;
+                    /* Para que el usuario no modifique el tamaño del textarea */
+                    resize: none;
+                }
+            }
+
+            .contact-form-button {
+                input {
+                    /* Estilos del botón enviar */
+                    width: 100%;
+                    border: none;
+                    padding: 5px 0;
+                    background-color: $sub-color;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
+
+// Pseudoclases no funcionan correctamente al anidarse
+
+/* Elimina el borde al hacer click en el input */
+.contact-form-input input:focus {
+    outline: none;
+}
+
+/* Elimina el borde al hacer click en el input */
+.contact-form-input textarea:focus {
+    outline: none;
+}
+
+/* Estilos :hover para el botón "enviar" */
+.contact-form-button input:hover {
+    color: $main-color;
+}
+
+// Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Media query de contact.html para celulares */
+
+@media only screen and (max-width:480px) {
+    /* Sección primera */
+    .contact-info {
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+
+        .contact-info-data {
+            width: 100%;
+            padding: 0 5%;
+        }
+
+        .contact-info-map {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    /* Sección segunda */
+    .contact-form {
+        margin: 25px 0;
+
+        .contact-form-photo {
+            display: none;
+        }
+
+        .contact-form-box {
+            width: 100%;
+
+            .contact-form-box-form {
+                padding: 0 25px;
+            }
+        }
+    }
+}
+
+/* Media query de contact.html para tablets */
+
+@media only screen and (max-width:991px) and (min-width:481px) {
+    .contact-form {
+        margin: 50px 0;
+
+        .contact-form-photo {
+            display: none;
+        }
+
+        .contact-form-box {
+            width: 100%;
+        }
+    }
+}
+
+/* Media query de contact.html para desktops pequeños */
+@media screen and (max-width:1024px) {
+    .contact-form-photo {
+        align-items: center;
+        img {
+            height: 80%;
+        }
+    }
+}
+
+/* Media query de contact.html para desktops medianos */
+@media screen and (min-width:1025px) and (max-width:1275px) {
+    .contact-form-photo {
+        align-items: center;
+        img {
+            height: 90%;
+        }
+    }
+}
