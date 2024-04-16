@@ -237,14 +237,13 @@ footer .footer-container a .footer-social {
   /* Tamaño de los íconos de redes sociales */
   width: 30px;
 }
-
-.footer-social:hover {
-  /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
+footer .footer-container a .footer-social:hover {
   transform: scale(1.2);
   opacity: 0.8;
   transition: transform 0.3 ease;
 }
 
+/* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
 /* Media query del footer para celulares */
 @media only screen and (max-width: 480px) {
   footer .footer-container .fb {

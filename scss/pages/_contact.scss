@@ -87,6 +87,11 @@
                     border: none;
                     font-family: "cantarell";
                     border-bottom: 1px solid $main-color;
+
+                    &:focus {
+                        /* Elimina el borde al hacer click en el input */
+                        outline: none;
+                    }
                 }
 
                 textarea {
@@ -97,6 +102,11 @@
                     border-bottom: 1px solid $main-color;
                     /* Para que el usuario no modifique el tamaño del textarea */
                     resize: none;
+
+                    &:focus {
+                        /* Elimina el borde al hacer click en el textarea */
+                        outline: none;
+                    }
                 }
             }
 
@@ -109,27 +119,15 @@
                     background-color: $sub-color;
                     font-weight: bold;
                     font-size: 1.1em;
+
+                    &:hover {
+                        /* Estilos :hover para el botón "enviar" */
+                        color: $main-color;
+                    }
                 }
             }
         }
     }
-}
-
-// Pseudoclases no funcionan correctamente al anidarse
-
-/* Elimina el borde al hacer click en el input */
-.contact-form-input input:focus {
-    outline: none;
-}
-
-/* Elimina el borde al hacer click en el input */
-.contact-form-input textarea:focus {
-    outline: none;
-}
-
-/* Estilos :hover para el botón "enviar" */
-.contact-form-button input:hover {
-    color: $main-color;
 }
 
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////

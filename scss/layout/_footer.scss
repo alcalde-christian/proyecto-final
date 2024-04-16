@@ -52,17 +52,16 @@ footer {
                 .footer-social {
                     /* Tamaño de los íconos de redes sociales */
                     width: 30px;
+
+                    &:hover {
+                        /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
+                        transform: scale(1.2);
+                        opacity: 0.8;
+                        transition: transform 0.3 ease;
+                    }
                 }
             }
     }
-}
-
-// Pseudoclase :hover no funciona si utilizo nesting
-.footer-social:hover {
-    /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
-    transform: scale(1.2);
-    opacity: 0.8;
-    transition: transform 0.3 ease;
 }
 
 // Media queries

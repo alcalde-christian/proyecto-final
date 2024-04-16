@@ -16,6 +16,13 @@
     .project-grid-item {
         /* Ajuste del tamaño de las imágenes */
         @include img100;
+
+        &:hover {
+            /* Efecto de claridad y aumento de tamaño al pasar el cursor sobre las imágenes */
+            opacity: 0.8;
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
     }
 
     // Asignación de posiciones para las imágenes
@@ -47,14 +54,6 @@
         @include grid ("1/2","4/5");
     }
     // Fin de asignación de posiciones
-}
-
-// Pseudoclase :hover no funciona si utilizo nesting
-.project-grid-item:hover {
-    /* Efecto de claridad y aumento de tamaño al pasar el cursor sobre las imágenes */
-    opacity: 0.8;
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
 }
 
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////

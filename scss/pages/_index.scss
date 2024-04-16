@@ -52,12 +52,6 @@
     }
 }
 
-// Pseudoclase :hover no funciona si utilizo nesting
-.main-services:hover {
-    background-color: $main-color;
-    transition: background-color 0.5s ease;
-}
-
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
 /* Media query de index.html para celulares */
 
