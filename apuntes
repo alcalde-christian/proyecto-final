@@ -1,12 +1,16 @@
 Estilos en línea para Navbar:
     text-decoration: "underline" para subrayar el link de la página activa. Vi que normalmente se hace con JS, así que provisoriamente uso este método.
-Pre2:
-    Comentarios conteniendo "Pre2" indican una modificación del código sobre algo que ya estaba presentado en la primera pre-entrega.
+
 ---------------------------------------------------------------------------
 Falta resolver:
-Probar carousel indicando alto y ancho de imágenes
-Ajustar index.html a pantallas más pequeñas **OK**
-Ajustar footer para pantallas de celulares **OK**
 Optimizar el uso de fuentes usándolas de forma online
-Normalizar el uso de <h1> en Navbar **OK**
+Comprimir imágenes para carga rápida
+Chequear el uso de etiquetas semánticas
+    Index.html normalizado*************************
+    us.html normalizado (falta responsive)*********
+    services.html pendiente por rediseño
+    projects.html normalizado**********************
+    contact.html normalizado***********************
+    success.html ya estaba normalizado*************
+Chequear comportamiento responsive
 ---------------------------------------------------------------------------

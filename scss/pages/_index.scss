@@ -45,9 +45,10 @@
             }
         }
         // Estilos del texto que se encuentra debajo de las imágenes de los servicios ofrecidos
-        h2 {
+        h3 {
             @include bold15;
             margin: 0;
+            padding: 0;
         }
     }
 }

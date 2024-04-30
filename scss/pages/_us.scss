@@ -118,7 +118,7 @@
         background-color: $main-color;
         color: $sub-color;
 
-        h5 {
+        p {
             @include quote;
             font-size: 0.83em;
             line-height: 1.5;
@@ -200,7 +200,8 @@
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
 /* Media query de us.html para celulares */
 
-@media only screen and (max-width:480px) {
+/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
+@media only screen and (max-width:480px), (max-width:991px) and (orientation:landscape) {
     /* Sección primera */
     .us-main-grid-container {
         /* Cambio en disposición del grid */

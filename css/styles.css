@@ -120,7 +120,8 @@ header .navbar .container-fluid .navbar-links .navbar-nav .nav-item .nav-link {
 }
 
 /* Media query del header para celulares */
-@media only screen and (max-width: 480px) {
+/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
+@media only screen and (max-width: 480px), (max-width: 991px) and (orientation: landscape) {
   header {
     /* En Mobile el navbar se mostrará en tamaño más pequeño */
     height: 50px;
@@ -154,7 +155,8 @@ header .navbar .container-fluid .navbar-links .navbar-nav .nav-item .nav-link {
   }
 }
 /* Media query del header para tablets */
-@media only screen and (max-width: 991px) and (min-width: 481px) {
+/* (orientation:portrait) para que no pise los estilos de mobile en modo paisaje */
+@media only screen and (max-width: 991px) and (min-width: 481px) and (orientation: portrait) {
   header {
     /* En tablet el Navbar tendrá un tamaño mediano */
     height: 75px;
@@ -169,12 +171,12 @@ header .navbar .container-fluid .navbar-links .navbar-nav .nav-item .nav-link {
   header .navbar .container-fluid .navbar-title .tablet {
     /* Toda etiqueta con la propiedad .tablet se hará visible */
     display: block;
+    text-decoration: none;
+  }
+  header .navbar .container-fluid .navbar-title .tablet h2 {
     font-weight: bold;
     font-size: 1.5em;
     color: black;
-    text-decoration: none;
-  }
-  header .navbar .container-fluid .navbar-title .tablet p {
     font-family: "anta";
     line-height: 1;
   }
@@ -238,12 +240,12 @@ footer .footer-container a .footer-social {
   width: 30px;
 }
 footer .footer-container a .footer-social:hover {
+  /* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
   transform: scale(1.2);
   opacity: 0.8;
   transition: transform 0.3 ease;
 }
 
-/* Efecto sobre los íconos de redes sociales al pasar el cursor sobre ellos */
 /* Media query del footer para celulares */
 @media only screen and (max-width: 480px) {
   footer .footer-container .fb {
@@ -269,7 +271,7 @@ footer .footer-container a .footer-social:hover {
     /* Fin de asignación de posiciones de los elementos */
   }
 }
-/* Media query del header para tablets */
+/* Media query del footer para tablets */
 @media only screen and (max-width: 991px) and (min-width: 481px) {
   footer .footer-container .copyright {
     text-align: center;
@@ -310,15 +312,11 @@ footer .footer-container a .footer-social:hover {
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
-.services-container .services-item h2 {
+.services-container .services-item h3 {
   font-weight: bold;
   font-size: 1.5em;
   margin: 0;
-}
-
-.main-services:hover {
-  background-color: #ff8c00;
-  transition: background-color 0.5s ease;
+  padding: 0;
 }
 
 /* Media query de index.html para celulares */
@@ -437,7 +435,7 @@ footer .footer-container a .footer-social:hover {
   background-color: #ff8c00;
   color: white;
 }
-.us-message h5 {
+.us-message p {
   font-family: "poppins";
   font-style: italic;
   font-weight: bold;
@@ -516,7 +514,8 @@ footer .footer-container a .footer-social:hover {
 }
 
 /* Media query de us.html para celulares */
-@media only screen and (max-width: 480px) {
+/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
+@media only screen and (max-width: 480px), (max-width: 991px) and (orientation: landscape) {
   /* Sección primera */
   .us-main-grid-container {
     /* Cambio en disposición del grid */
@@ -835,6 +834,12 @@ h3 {
   width: 100%;
   height: 100%;
 }
+.project-grid-container .project-grid-item:hover {
+  /* Efecto de claridad y aumento de tamaño al pasar el cursor sobre las imágenes */
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 .project-grid-container .one {
   grid-column: 1/3;
   grid-row: 1/3;
@@ -870,13 +875,6 @@ h3 {
 .project-grid-container .nine {
   grid-column: 1/2;
   grid-row: 4/5;
-}
-
-.project-grid-item:hover {
-  /* Efecto de claridad y aumento de tamaño al pasar el cursor sobre las imágenes */
-  opacity: 0.8;
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
 }
 
 /* Media query de projects.html para celulares */
@@ -1046,6 +1044,10 @@ h3 {
   font-family: "cantarell";
   border-bottom: 1px solid #ff8c00;
 }
+.contact-form .contact-form-box .contact-form-box-form .contact-form-input input:focus {
+  /* Elimina el borde al hacer click en el input */
+  outline: none;
+}
 .contact-form .contact-form-box .contact-form-box-form .contact-form-input textarea {
   /* Estilos del área de mensaje */
   width: 100%;
@@ -1054,6 +1056,10 @@ h3 {
   border-bottom: 1px solid #ff8c00;
   /* Para que el usuario no modifique el tamaño del textarea */
   resize: none;
+}
+.contact-form .contact-form-box .contact-form-box-form .contact-form-input textarea:focus {
+  /* Elimina el borde al hacer click en el textarea */
+  outline: none;
 }
 .contact-form .contact-form-box .contact-form-box-form .contact-form-button input {
   /* Estilos del botón enviar */
@@ -1064,19 +1070,8 @@ h3 {
   font-weight: bold;
   font-size: 1.1em;
 }
-
-/* Elimina el borde al hacer click en el input */
-.contact-form-input input:focus {
-  outline: none;
-}
-
-/* Elimina el borde al hacer click en el input */
-.contact-form-input textarea:focus {
-  outline: none;
-}
-
-/* Estilos :hover para el botón "enviar" */
-.contact-form-button input:hover {
+.contact-form .contact-form-box .contact-form-box-form .contact-form-button input:hover {
+  /* Estilos :hover para el botón "enviar" */
   color: #ff8c00;
 }
 

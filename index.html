@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
+    <meta name="description" content="Estudio de arquitectura especializado en proyectos residenciales y comerciales">
+    <meta name="keywords" content="arquitectura, estudio de arquitectura, diseño arquitectónico, diseño exterior, diseño interior, gestión de proyectos, proyectos residenciales, proyectos comerciales, construcción, edificación">
+
     <!-- Conexión con Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <!-- Conexión con .css -->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <!-- Título de la página en pestañas -->
     <title>AA - Estudio técnico de arquitectura</title>
     <!-- Ícono de la página -->
     <link rel="icon" type="image/png" href="./img/star.ico">
@@ -26,7 +30,9 @@
                 <!-- Flex item con logo y título -->
                 <div class="navbar-title">
                     <!-- Versión estándar para desktop con imagen y título-->
-                    <img src="./img/logotop.png" alt="Logo de la página" class="logo">
+                    <a href="./index.html">
+                        <img src="./img/logotop.png" alt="Logo de la página" class="logo">
+                    </a>
                     <h1 class="title">
                         ESTUDIO TÉCNICO DE ARQUITECTURA
                     </h1>
@@ -36,12 +42,12 @@
                     </a>
                     <!-- Versión tablet con imagen y título -->
                     <a class="tablet m-0" href="./index.html">
-                        <p class="m-0">
+                        <h2 class="m-0">
                             ESTUDIO TÉCNICO
-                        </p>
-                        <p class="m-0">
+                        </h2>
+                        <h2 class="m-0">
                             DE ARQUITECTURA
-                        </p>
+                        </h2>
                     </a>
                 </div>
                 <!-- Flex ítem con botón -->
@@ -77,17 +83,17 @@
     </header>
     <main>
          <!-- Imágen principal de la página -->
-        <section class="photo-slide-container"> <!-- Pre2: se agregó una clase para mejor identificación -->
+        <section class="photo-slide-container">
             <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="./img/main1.jpg" class="d-block w-100" alt="Imagen principal">
+                    <img src="./img/main1.jpg" class="d-block w-100" alt="Imagen principal de la página">
                   </div>
                   <div class="carousel-item" data-bs-interval="10000">
-                    <img src="./img/main2.jpg" class="d-block w-100" alt="Imagen principal">
+                    <img src="./img/main2.jpg" class="d-block w-100" alt="Proyecto de vivienda en el bosque">
                   </div>
                   <div class="carousel-item" data-bs-interval="10000">
-                    <img src="./img/main3.jpg" class="d-block w-100" alt="Imagen principal">
+                    <img src="./img/main3.jpg" class="d-block w-100" alt="Diseño de jardín interior">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -102,41 +108,41 @@
         </section>
 
         <!-- Imágenes de los servicios ofrecidos con link relativo al HTML servicios + interno según corresponda -->
-        <section class="services-container"> <!-- Pre2: Se agregó un Flex container para ordenar las imágenes -->
-            <div class="services-item"> <!-- Pre2: Flex items -->
-                <a class="highlight" href="./pages/services.html#Exterior">
-                    <img src="./img/servExtMain.jpg" alt="Servicios de diseño exterior" class="main-services">
+        <section class="services-container"> <!-- Flex container para ordenar las imágenes -->
+            <div class="services-item"> <!-- Flex items -->
+                <a href="./pages/services.html#Exterior">
+                    <img src="./img/servExtMain.jpg" alt="Servicios de diseño exterior" class="main-services highlight" loading="lazy"> <!-- Loading="lazy" para retrasar la carga de imágenes y optimizar la página -->
                 </a>
-                <h2>
+                <h3>
                     DISEÑO
-                </h2>
-                <h2>
+                </h3>
+                <h3>
                     EXTERIOR
-                </h2>
+                </h3>
             </div>
             
             <div class="services-item">
-                <a class="highlight" href="./pages/services.html#Interior">
-                    <img src="./img/servIntMain.jpg" alt="Servicios de diseño interior" class="main-services">
+                <a href="./pages/services.html#Interior">
+                    <img src="./img/servIntMain.jpg" alt="Servicios de diseño interior" class="main-services highlight" loading="lazy"> <!-- Loading="lazy" para retrasar la carga de imágenes y optimizar la página -->
                 </a>
-                <h2>
+                <h3>
                     DISEÑO
-                </h2>
-                <h2>
+                </h3>
+                <h3>
                     INTERIOR
-                </h2>
+                </h3>
             </div>
 
             <div class="services-item">
-                <a class="highlight" href="./pages/services.html#Gestion">
-                    <img src="./img/servGesMain.jpg" alt="Servicios de gestión de proyectos" class="main-services">
+                <a href="./pages/services.html#Gestion">
+                    <img src="./img/servGesMain.jpg" alt="Servicios de gestión de proyectos" class="main-services highlight" loading="lazy"> <!-- Loading="lazy" para retrasar la carga de imágenes y optimizar la página -->
                 </a>
-                <h2>
+                <h3>
                     GESTIÓN DE
-                </h2>
-                <h2>
+                </h3>
+                <h3>
                     PROYECTOS
-                </h2>
+                </h3>
             </div>
         </section>
     </main>
@@ -145,17 +151,17 @@
         <section class="footer-container">
             <div class="footer-item fb">
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="./img/FBLogo.png" alt="Link Facebook" class="footer-social">
+                    <img src="./img/FBLogo.png" alt="Link a Facebook" class="footer-social">
                 </a>
             </div>
             <div class="footer-item ig">
                 <a href="https://www.instagram.com" target="_blank">
-                    <img src="./img/IGLogo.png" alt="Link Instagram" class="footer-social"> 
+                    <img src="./img/IGLogo.png" alt="Link a Instagram" class="footer-social"> 
                 </a>
             </div>
             <div class="footer-item in">
                 <a href="https://www.linkedin.com" target="_blank">
-                    <img src="./img/INLogo.png" alt="Link LinkedIn" class="footer-social">
+                    <img src="./img/INLogo.png" alt="Link a LinkedIn" class="footer-social">
                 </a>
             </div>
             <div class="footer-item contact">
