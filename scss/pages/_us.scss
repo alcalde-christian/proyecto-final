@@ -11,7 +11,7 @@
     .us-main-grid-container {
         display: grid;
         grid-template-columns: repeat(9,1fr);
-        grid-template-rows: repeat(3,30vh);
+        grid-template-rows: repeat(3,28vh);
 
         .us-main-grid-item {
             /* Tamaño de imágenes 100% de alto y ancho */
@@ -39,12 +39,14 @@
             background-color: $sub-color;
             @include flex-col;
             justify-content: center;
+            // Padding evita que en ciertos dispositivos el texto desborde de la caja blanca contenedora
+            padding: 100px 0;
 
             .us-main-box-quote {
                 /* Estilos de la cita */
                 @include quote;
                 line-height: 1.5;
-                font-size: 1.5em;
+                font-size: 1.4em;
                 padding: 0 25px 0 10px;
             }
 
@@ -69,7 +71,6 @@
 
         }
     }
-    // Falta MQ para distintos desktops
 
 /* Sección segunda: objetivos */
 
@@ -106,7 +107,6 @@
             }
         }
     }
-    // Falta MQ para distintos desktops
 
 /* Sección tercera: cita */
 
@@ -200,8 +200,9 @@
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
 /* Media query de us.html para celulares */
 
-/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
-@media only screen and (max-width:480px), (max-width:991px) and (orientation:landscape) {
+/* (max-width:648px) para mantener la relación de aspecto de la imagen principal */
+/* (orientation: landscape) para mantener la disposición en celulares cuando se encuentren en modo paisaje */
+@media only screen and (max-width:648px), (max-width:991px) and (orientation:landscape) {
     /* Sección primera */
     .us-main-grid-container {
         /* Cambio en disposición del grid */
@@ -311,9 +312,12 @@
 
 /* Media query de us.html para tablets */
 
-@media only screen and (max-width:991px) and (min-width:481px) {
+/* (orientation:portrait) para no pisar los estilos de las media queries de mobile */
+@media only screen and (max-width:991px) and (min-width:649px) and (orientation:portrait) {
     /* Sección primera */
     .us-main-grid-container {
+        grid-template-rows: repeat(3,20vh);
+
         .us-main-box {
             /* Asignación de ubicación para el recuadro blanco contenedor de texto */
             grid-column: 2/6;

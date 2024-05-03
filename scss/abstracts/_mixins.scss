@@ -38,14 +38,21 @@
     font-size: 1.5em;
 }
 
+// Mixin para subtítulos de services.html
+@mixin services-subtitles {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
 // Mixin con estilos para imágenes de services.html
-@mixin services-grid-img-deco {
+@mixin services-img-deco {
     border: 3px solid $main-color;
     border-radius: 100px;
 }
 
 // Mixin con estilos para texto de services.html
-@mixin services-grid-text-deco {
+@mixin services-text-deco {
     background-color: $sub-color; 
     border-radius: 50px;
     opacity: 85%;

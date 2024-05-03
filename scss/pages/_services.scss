@@ -4,195 +4,139 @@
 @import "../abstracts/mixins";
 
 /* services.html .............................................................................................. */
-/* Espaciado para los títulos de los servicios ofrecidos */
-h3 {
-    padding-bottom: 20px;
-}
 
-/* Se aplica Grid para organizar los distintos servicios */
-/* Grid general contenedor de 3 grids más pequeños (1x3) */
-.services-grid-container {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(3,1fr);
-    /* Espaciado entre los distintos servicios */
-    row-gap: 100px;
-    /* Margen superior */
-    margin-top: 25px;
-    /* Margen inferior */
-    margin-bottom: 50px;
+.services-ext, .services-int, .services-ges {
+    @include flex;
+    padding: 50px 10%; /* Espaciado respecto de los laterales y entre los distintos servicios */
 
-    .services-grid-ext, .services-grid-int, .services-grid-ges {
-        /* Disposición de Grids más pequeños (6x4 c/u) */
-        display: grid;
-        grid-template-columns: repeat(6,1fr);
-        grid-template-rows: repeat(4,1fr);
-        height: 50vh;
-    }
-
-    .services-grid-ext {
-        /* Sub-grid para Diseño Exterior */
-        @include grid ("1/2","1/2");
-        .services-grid-ext-img {
-            // Ubicación de la imagen dentro del sub-grid
-            @include grid ("2/5","1/5");
-            img {
-                // Estilos de imagen
-                @include services-grid-img-deco;
-                @include img100;
-                border-right: none;
-            }
-        }
-        .services-grid-ext-text {
-            text-align: right;
-            @include services-grid-text-deco;
-            // Ubicación del texto dentro del sub-grid
-            @include grid ("4/6","2/4");
-            // Estilos de títulos de cada sub-grid
-            h3 {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
+    .services-ext-img, .services-int-img, .services-ges-img {
+        /* Estilos generales para todas las imágenes */
+        @include flex;
+        width: 50%; /* Ancho del contenedor */
+        z-index: -1; /* Posiciona las imágenes por detrás de los textos */
+        position: relative; /* Para aplicar left/right según corresponda */
+        img {
+            @include services-img-deco;
         }
     }
 
-    .services-grid-int {
-        /* Sub-grid para Diseño Interior */
-        @include grid ("1/2","2/3");
-        .services-grid-int-img {
-            // Ubicación de la imagen dentro del sub-grid
-            @include grid ("3/6","1/5");
-            img {
-                // Estilos de imagen
-                @include services-grid-img-deco;
-                @include img100;
-                border-left: none;
-            }
-        }
-        .services-grid-int-text {
-            text-align: left;
-            @include services-grid-text-deco;
-            // Ubicación del texto dentro del sub-grid
-            @include grid ("2/4","2/4");
-            // Estilos de títulos de cada sub-grid
-            h3 {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
+    .services-ext-img, .services-ges-img {
+        /* Estilos sólo para las imágenes primera y tercera (Exterior y Gestión) */
+        left: 10%;
+        img {
+            border-right: none; /* Borde derecho eliminado */
         }
     }
 
-    .services-grid-ges {
-        /* Sub-grid para Gestión de Proyectos */
-        @include grid ("1/2","3/4");
-        .services-grid-ges-img {
-            // Ubicación de la imagen dentro del sub-grid
-            @include grid ("2/5","1/5");
-            img {
-                // Estilos de imagen
-                @include services-grid-img-deco;
-                @include img100;
-                border-right: none;
-            }
+    .services-int-img {
+        /* Estilos sólo para imagen segunda (Interior) */
+        right: 10%;
+        img {
+            border-left: none; /* Borde izquierdo eliminado */
         }
-        .services-grid-ges-text {
-            text-align: right;
-            @include services-grid-text-deco;
-            // Ubicación del texto dentro del sub-grid
-            @include grid ("4/6","2/4");
-            // Estilos de títulos de cada sub-grid
-            h3 {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
+    }
+
+    .services-ext-text, .services-int-text, .services-ges-text {
+        /* Estilos generales para todas las cajas de texto */
+        @include flex-col;
+        justify-content: center;
+        width: 50%; /* Ancho del contenedor */
+        height: 200px;
+        position: relative; /* Para aplicar left/right según corresponda */
+        @include services-text-deco;
+        h4 {
+            /* Estilos de títulos de cada servicio */
+            @include services-subtitles;
         }
+    }
+
+    .services-ext-text, .services-ges-text {
+        /* Estilos sólo para los textos de Exterior y Gestión */
+        text-align: right;
+        right: 10%;
+    }
+
+    .services-int-text {
+        /* Estilos sólo para los textos de Interior */
+        text-align: left;
+        left: 10%;
     }
 }
 
 // Media queries /////////////////////////////////////////////////////////////////////////////////////////////////
-/* Media query de services.html para celulares */
+/* Media query de services.html para celulares y tablets pequeñas */
 
-@media only screen and (max-width:480px) {
-    .services-grid-container {
-        /* Espaciado entre los distintos servicios */
-        row-gap: 25px;
-        /* Margen superior */
-        margin-top: 0;
-        /* Margen inferior */
-        margin-bottom: 25px;
+@media only screen and (max-width:674px) {
+    .services-ext, .services-int, .services-ges {
+        @include flex-col;
+        padding: 50px 10px; /* Nuevo espaciado lateral */
 
-        .services-grid-ext, .services-grid-int, .services-grid-ges {
-            .services-grid-ext-img, .services-grid-int-img, .services-grid-ges-img {
-                /* Nueva ubicación de las imágenes dentro de los subgrids */
-                @include grid ("1/7","1/3");
-    
-                img {
-                    /* Ajuste de estilos para las imágenes dentro de Grid */
-                    padding-bottom: 10px;
-                    border: none;
-                    border-radius: 0;
-                }
+        .services-ext-img, .services-int-img, .services-ges-img {
+            width: 100%; /* Ancho del contenedor */
+            position: static; /* Elimina position:relative */
+
+            img {
+                border: none; /* Elimina bordes de las imágenes */
+                border-radius: 0;
+                width: 100%; /* Ancho de las imágenes dentro de sus contenedores */
             }
+        }
 
-            .services-grid-ext-text, .services-grid-int-text, .services-grid-ges-text {
-                /* Nueva ubicación de los textos dentro de los subgrids */
-                font-size: 0.8em;
-                @include grid ("1/7","3/5");
-            }
+        .services-int-img {
+            order: 1; /* Ubica a la imagen por arriba del texto */
+        }
 
-            .services-grid-ext-text, .services-grid-ges-text {
-                /* Espaciado para textos con alineación derecha */
-                padding-right: 10px;
-            }
+        .services-ext-text, .services-int-text, .services-ges-text {
+            width: 100%; /* Ancho del contenedor */
+            position: static; /* Elimina position:relative */
+            height: auto;
+            padding-top: 10px;
+        }
 
-            .services-grid-int-text {
-                /* Espaciado para textos con alineación izquierda */
-                padding-left: 10px;
-            }
+        .services-int-text {
+            order: 2; /* Ubica al texto por debajo de la imagen */
         }
     }
 }
 
-/* Media query de services.html para tablets */
+/* Media query para tablets grandes */
 
-@media only screen and (max-width:991px) and (min-width:481px) {
-    .services-grid-container {
-        .services-grid-ext, .services-grid-int, .services-grid-ges {
-            grid-template-columns: 2% repeat(4,24%) 2%;
-    
-            .services-grid-int-text, .services-grid-ext-text, .services-grid-ges-text {
-                padding-top: 5px;
-                height: 110%;
+@media only screen and (min-width:675px) and (max-width:991px) {
 
-                h3 {
-                    padding-bottom: 5px;
-                }
+    .services-ext, .services-int, .services-ges {
+        scale: 0.9;
+        padding: 25px 10px; /* Nuevo espacio lateral y entre los distintos servicios */
 
-                .services-text {
-                    font-size: 0.9em;
-                }
-            }
+        .services-ext-img, .services-ges-img {
+            /* Nueva separación de las imágenes primera y tercera (Exterior y Gestión) */
+            left: 20%;
+        }
+
+        .services-int-img {
+            /* Nueva separación de la imagen segunda (Interior) */
+            right: 20%;
+        }
+
+        .services-ext-text, .services-int-text, .services-ges-text {
+            height: 250px; /* Nueva altura del contenedor de texto */
+        }
+
+        .services-ext-text, .services-ges-text {
+            /* Nueva separación de los contenedores texto Exterior y Gestión */
+            right: 0;
+        }
+
+        .services-int-text {
+            /* Nueva separación del contenedor texto Interior */
+            left: 0;
         }
     }
 }
 
-/* Media query de services.html para desktops pequeños */
-@media screen and (max-width:1150px) and (min-width:992px) {
-    .services-grid-container {
-        .services-grid-ext, .services-grid-int, .services-grid-ges {
-            grid-template-columns: 0.5fr repeat(4,1fr) 0.5fr;
-        }
+/* Media query para desktops grandes */
+
+@media only screen and (min-width:1400px) {
+    .services-ext, .services-int, .services-ges {
+        margin: 0 10%;
     }
 }
-
-/* Desktops medianos utilizan los valores predeterminados */
-
-/* Media query de services.html para desktops grandes */
-@media screen and (min-width:1501px) {
-    .services-grid-container {
-        .services-grid-ext, .services-grid-int, .services-grid-ges {
-            grid-template-columns: 2fr repeat(4,1fr) 2fr;
-        }
-    }
-}
-

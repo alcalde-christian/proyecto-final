@@ -64,8 +64,7 @@ header {
 // Media queries
 /* Media query del header para celulares */
 
-/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
-@media only screen and (max-width:480px), (max-width:991px) and (orientation:landscape) {
+@media only screen and (max-width:480px) {
     header {
         /* En Mobile el navbar se mostrará en tamaño más pequeño */
         height: 50px;
@@ -110,8 +109,7 @@ header {
 
 /* Media query del header para tablets */
 
-/* (orientation:portrait) para que no pise los estilos de mobile en modo paisaje */
-@media only screen and (max-width:991px) and (min-width:481px) and (orientation:portrait) {
+@media only screen and (max-width:991px) and (min-width:481px) {
     header {
         /* En tablet el Navbar tendrá un tamaño mediano */
         height: 75px;

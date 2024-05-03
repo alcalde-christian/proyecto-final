@@ -120,8 +120,7 @@ header .navbar .container-fluid .navbar-links .navbar-nav .nav-item .nav-link {
 }
 
 /* Media query del header para celulares */
-/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
-@media only screen and (max-width: 480px), (max-width: 991px) and (orientation: landscape) {
+@media only screen and (max-width: 480px) {
   header {
     /* En Mobile el navbar se mostrará en tamaño más pequeño */
     height: 50px;
@@ -155,8 +154,7 @@ header .navbar .container-fluid .navbar-links .navbar-nav .nav-item .nav-link {
   }
 }
 /* Media query del header para tablets */
-/* (orientation:portrait) para que no pise los estilos de mobile en modo paisaje */
-@media only screen and (max-width: 991px) and (min-width: 481px) and (orientation: portrait) {
+@media only screen and (max-width: 991px) and (min-width: 481px) {
   header {
     /* En tablet el Navbar tendrá un tamaño mediano */
     height: 75px;
@@ -334,7 +332,7 @@ footer .footer-container a .footer-social:hover {
 .us-main-grid-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 30vh);
+  grid-template-rows: repeat(3, 28vh);
 }
 .us-main-grid-container .us-main-grid-item {
   /* Tamaño de imágenes 100% de alto y ancho */
@@ -364,6 +362,7 @@ footer .footer-container a .footer-social:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 100px 0;
 }
 .us-main-grid-container .us-main-box .us-main-box-quote {
   /* Estilos de la cita */
@@ -371,7 +370,7 @@ footer .footer-container a .footer-social:hover {
   font-style: italic;
   font-weight: bold;
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: 1.4em;
   padding: 0 25px 0 10px;
 }
 .us-main-grid-container .us-main-box .us-main-box-sign {
@@ -514,8 +513,9 @@ footer .footer-container a .footer-social:hover {
 }
 
 /* Media query de us.html para celulares */
-/* (orientation:landscape) para que mantenga vista de celular aún con el teléfono en modo paisaje */
-@media only screen and (max-width: 480px), (max-width: 991px) and (orientation: landscape) {
+/* (max-width:648px) para mantener la relación de aspecto de la imagen principal */
+/* (orientation: landscape) para mantener la disposición en celulares cuando se encuentren en modo paisaje */
+@media only screen and (max-width: 648px), (max-width: 991px) and (orientation: landscape) {
   /* Sección primera */
   .us-main-grid-container {
     /* Cambio en disposición del grid */
@@ -605,8 +605,12 @@ footer .footer-container a .footer-social:hover {
   }
 }
 /* Media query de us.html para tablets */
-@media only screen and (max-width: 991px) and (min-width: 481px) {
+/* (orientation:portrait) para no pisar los estilos de las media queries de mobile */
+@media only screen and (max-width: 991px) and (min-width: 649px) and (orientation: portrait) {
   /* Sección primera */
+  .us-main-grid-container {
+    grid-template-rows: repeat(3, 20vh);
+  }
   .us-main-grid-container .us-main-box {
     /* Asignación de ubicación para el recuadro blanco contenedor de texto */
     grid-column: 2/6;
@@ -645,179 +649,127 @@ footer .footer-container a .footer-social:hover {
   }
 }
 /* services.html .............................................................................................. */
-/* Espaciado para los títulos de los servicios ofrecidos */
-h3 {
-  padding-bottom: 20px;
+.services-ext, .services-int, .services-ges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10%; /* Espaciado respecto de los laterales y entre los distintos servicios */
 }
-
-/* Se aplica Grid para organizar los distintos servicios */
-/* Grid general contenedor de 3 grids más pequeños (1x3) */
-.services-grid-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  /* Espaciado entre los distintos servicios */
-  row-gap: 100px;
-  /* Margen superior */
-  margin-top: 25px;
-  /* Margen inferior */
-  margin-bottom: 50px;
+.services-ext .services-ext-img, .services-ext .services-int-img, .services-ext .services-ges-img, .services-int .services-ext-img, .services-int .services-int-img, .services-int .services-ges-img, .services-ges .services-ext-img, .services-ges .services-int-img, .services-ges .services-ges-img {
+  /* Estilos generales para todas las imágenes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Ancho del contenedor */
+  z-index: -1; /* Posiciona las imágenes por detrás de los textos */
+  position: relative; /* Para aplicar left/right según corresponda */
 }
-.services-grid-container .services-grid-ext, .services-grid-container .services-grid-int, .services-grid-container .services-grid-ges {
-  /* Disposición de Grids más pequeños (6x4 c/u) */
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  height: 50vh;
-}
-.services-grid-container .services-grid-ext {
-  /* Sub-grid para Diseño Exterior */
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-.services-grid-container .services-grid-ext .services-grid-ext-img {
-  grid-column: 2/5;
-  grid-row: 1/5;
-}
-.services-grid-container .services-grid-ext .services-grid-ext-img img {
+.services-ext .services-ext-img img, .services-ext .services-int-img img, .services-ext .services-ges-img img, .services-int .services-ext-img img, .services-int .services-int-img img, .services-int .services-ges-img img, .services-ges .services-ext-img img, .services-ges .services-int-img img, .services-ges .services-ges-img img {
   border: 3px solid #ff8c00;
   border-radius: 100px;
-  width: 100%;
-  height: 100%;
-  border-right: none;
 }
-.services-grid-container .services-grid-ext .services-grid-ext-text {
-  text-align: right;
+.services-ext .services-ext-img, .services-ext .services-ges-img, .services-int .services-ext-img, .services-int .services-ges-img, .services-ges .services-ext-img, .services-ges .services-ges-img {
+  /* Estilos sólo para las imágenes primera y tercera (Exterior y Gestión) */
+  left: 10%;
+}
+.services-ext .services-ext-img img, .services-ext .services-ges-img img, .services-int .services-ext-img img, .services-int .services-ges-img img, .services-ges .services-ext-img img, .services-ges .services-ges-img img {
+  border-right: none; /* Borde derecho eliminado */
+}
+.services-ext .services-int-img, .services-int .services-int-img, .services-ges .services-int-img {
+  /* Estilos sólo para imagen segunda (Interior) */
+  right: 10%;
+}
+.services-ext .services-int-img img, .services-int .services-int-img img, .services-ges .services-int-img img {
+  border-left: none; /* Borde izquierdo eliminado */
+}
+.services-ext .services-ext-text, .services-ext .services-int-text, .services-ext .services-ges-text, .services-int .services-ext-text, .services-int .services-int-text, .services-int .services-ges-text, .services-ges .services-ext-text, .services-ges .services-int-text, .services-ges .services-ges-text {
+  /* Estilos generales para todas las cajas de texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%; /* Ancho del contenedor */
+  height: 200px;
+  position: relative; /* Para aplicar left/right según corresponda */
   background-color: white;
   border-radius: 50px;
   opacity: 85%;
-  grid-column: 4/6;
-  grid-row: 2/4;
 }
-.services-grid-container .services-grid-ext .services-grid-ext-text h3 {
-  font-size: 1.2em;
+.services-ext .services-ext-text h4, .services-ext .services-int-text h4, .services-ext .services-ges-text h4, .services-int .services-ext-text h4, .services-int .services-int-text h4, .services-int .services-ges-text h4, .services-ges .services-ext-text h4, .services-ges .services-int-text h4, .services-ges .services-ges-text h4 {
+  /* Estilos de títulos de cada servicio */
   font-weight: bold;
+  font-size: 1.2em;
+  padding-bottom: 10px;
 }
-.services-grid-container .services-grid-int {
-  /* Sub-grid para Diseño Interior */
-  grid-column: 1/2;
-  grid-row: 2/3;
+.services-ext .services-ext-text, .services-ext .services-ges-text, .services-int .services-ext-text, .services-int .services-ges-text, .services-ges .services-ext-text, .services-ges .services-ges-text {
+  /* Estilos sólo para los textos de Exterior y Gestión */
+  text-align: right;
+  right: 10%;
 }
-.services-grid-container .services-grid-int .services-grid-int-img {
-  grid-column: 3/6;
-  grid-row: 1/5;
-}
-.services-grid-container .services-grid-int .services-grid-int-img img {
-  border: 3px solid #ff8c00;
-  border-radius: 100px;
-  width: 100%;
-  height: 100%;
-  border-left: none;
-}
-.services-grid-container .services-grid-int .services-grid-int-text {
+.services-ext .services-int-text, .services-int .services-int-text, .services-ges .services-int-text {
+  /* Estilos sólo para los textos de Interior */
   text-align: left;
-  background-color: white;
-  border-radius: 50px;
-  opacity: 85%;
-  grid-column: 2/4;
-  grid-row: 2/4;
-}
-.services-grid-container .services-grid-int .services-grid-int-text h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.services-grid-container .services-grid-ges {
-  /* Sub-grid para Gestión de Proyectos */
-  grid-column: 1/2;
-  grid-row: 3/4;
-}
-.services-grid-container .services-grid-ges .services-grid-ges-img {
-  grid-column: 2/5;
-  grid-row: 1/5;
-}
-.services-grid-container .services-grid-ges .services-grid-ges-img img {
-  border: 3px solid #ff8c00;
-  border-radius: 100px;
-  width: 100%;
-  height: 100%;
-  border-right: none;
-}
-.services-grid-container .services-grid-ges .services-grid-ges-text {
-  text-align: right;
-  background-color: white;
-  border-radius: 50px;
-  opacity: 85%;
-  grid-column: 4/6;
-  grid-row: 2/4;
-}
-.services-grid-container .services-grid-ges .services-grid-ges-text h3 {
-  font-size: 1.2em;
-  font-weight: bold;
+  left: 10%;
 }
 
-/* Media query de services.html para celulares */
-@media only screen and (max-width: 480px) {
-  .services-grid-container {
-    /* Espaciado entre los distintos servicios */
-    row-gap: 25px;
-    /* Margen superior */
-    margin-top: 0;
-    /* Margen inferior */
-    margin-bottom: 25px;
+/* Media query de services.html para celulares y tablets pequeñas */
+@media only screen and (max-width: 674px) {
+  .services-ext, .services-int, .services-ges {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 10px; /* Nuevo espaciado lateral */
   }
-  .services-grid-container .services-grid-ext .services-grid-ext-img, .services-grid-container .services-grid-ext .services-grid-int-img, .services-grid-container .services-grid-ext .services-grid-ges-img, .services-grid-container .services-grid-int .services-grid-ext-img, .services-grid-container .services-grid-int .services-grid-int-img, .services-grid-container .services-grid-int .services-grid-ges-img, .services-grid-container .services-grid-ges .services-grid-ext-img, .services-grid-container .services-grid-ges .services-grid-int-img, .services-grid-container .services-grid-ges .services-grid-ges-img {
-    /* Nueva ubicación de las imágenes dentro de los subgrids */
-    grid-column: 1/7;
-    grid-row: 1/3;
+  .services-ext .services-ext-img, .services-ext .services-int-img, .services-ext .services-ges-img, .services-int .services-ext-img, .services-int .services-int-img, .services-int .services-ges-img, .services-ges .services-ext-img, .services-ges .services-int-img, .services-ges .services-ges-img {
+    width: 100%; /* Ancho del contenedor */
+    position: static; /* Elimina position:relative */
   }
-  .services-grid-container .services-grid-ext .services-grid-ext-img img, .services-grid-container .services-grid-ext .services-grid-int-img img, .services-grid-container .services-grid-ext .services-grid-ges-img img, .services-grid-container .services-grid-int .services-grid-ext-img img, .services-grid-container .services-grid-int .services-grid-int-img img, .services-grid-container .services-grid-int .services-grid-ges-img img, .services-grid-container .services-grid-ges .services-grid-ext-img img, .services-grid-container .services-grid-ges .services-grid-int-img img, .services-grid-container .services-grid-ges .services-grid-ges-img img {
-    /* Ajuste de estilos para las imágenes dentro de Grid */
-    padding-bottom: 10px;
-    border: none;
+  .services-ext .services-ext-img img, .services-ext .services-int-img img, .services-ext .services-ges-img img, .services-int .services-ext-img img, .services-int .services-int-img img, .services-int .services-ges-img img, .services-ges .services-ext-img img, .services-ges .services-int-img img, .services-ges .services-ges-img img {
+    border: none; /* Elimina bordes de las imágenes */
     border-radius: 0;
+    width: 100%; /* Ancho de las imágenes dentro de sus contenedores */
   }
-  .services-grid-container .services-grid-ext .services-grid-ext-text, .services-grid-container .services-grid-ext .services-grid-int-text, .services-grid-container .services-grid-ext .services-grid-ges-text, .services-grid-container .services-grid-int .services-grid-ext-text, .services-grid-container .services-grid-int .services-grid-int-text, .services-grid-container .services-grid-int .services-grid-ges-text, .services-grid-container .services-grid-ges .services-grid-ext-text, .services-grid-container .services-grid-ges .services-grid-int-text, .services-grid-container .services-grid-ges .services-grid-ges-text {
-    /* Nueva ubicación de los textos dentro de los subgrids */
-    font-size: 0.8em;
-    grid-column: 1/7;
-    grid-row: 3/5;
+  .services-ext .services-int-img, .services-int .services-int-img, .services-ges .services-int-img {
+    order: 1; /* Ubica a la imagen por arriba del texto */
   }
-  .services-grid-container .services-grid-ext .services-grid-ext-text, .services-grid-container .services-grid-ext .services-grid-ges-text, .services-grid-container .services-grid-int .services-grid-ext-text, .services-grid-container .services-grid-int .services-grid-ges-text, .services-grid-container .services-grid-ges .services-grid-ext-text, .services-grid-container .services-grid-ges .services-grid-ges-text {
-    /* Espaciado para textos con alineación derecha */
-    padding-right: 10px;
+  .services-ext .services-ext-text, .services-ext .services-int-text, .services-ext .services-ges-text, .services-int .services-ext-text, .services-int .services-int-text, .services-int .services-ges-text, .services-ges .services-ext-text, .services-ges .services-int-text, .services-ges .services-ges-text {
+    width: 100%; /* Ancho del contenedor */
+    position: static; /* Elimina position:relative */
+    height: auto;
+    padding-top: 10px;
   }
-  .services-grid-container .services-grid-ext .services-grid-int-text, .services-grid-container .services-grid-int .services-grid-int-text, .services-grid-container .services-grid-ges .services-grid-int-text {
-    /* Espaciado para textos con alineación izquierda */
-    padding-left: 10px;
-  }
-}
-/* Media query de services.html para tablets */
-@media only screen and (max-width: 991px) and (min-width: 481px) {
-  .services-grid-container .services-grid-ext, .services-grid-container .services-grid-int, .services-grid-container .services-grid-ges {
-    grid-template-columns: 2% repeat(4, 24%) 2%;
-  }
-  .services-grid-container .services-grid-ext .services-grid-int-text, .services-grid-container .services-grid-ext .services-grid-ext-text, .services-grid-container .services-grid-ext .services-grid-ges-text, .services-grid-container .services-grid-int .services-grid-int-text, .services-grid-container .services-grid-int .services-grid-ext-text, .services-grid-container .services-grid-int .services-grid-ges-text, .services-grid-container .services-grid-ges .services-grid-int-text, .services-grid-container .services-grid-ges .services-grid-ext-text, .services-grid-container .services-grid-ges .services-grid-ges-text {
-    padding-top: 5px;
-    height: 110%;
-  }
-  .services-grid-container .services-grid-ext .services-grid-int-text h3, .services-grid-container .services-grid-ext .services-grid-ext-text h3, .services-grid-container .services-grid-ext .services-grid-ges-text h3, .services-grid-container .services-grid-int .services-grid-int-text h3, .services-grid-container .services-grid-int .services-grid-ext-text h3, .services-grid-container .services-grid-int .services-grid-ges-text h3, .services-grid-container .services-grid-ges .services-grid-int-text h3, .services-grid-container .services-grid-ges .services-grid-ext-text h3, .services-grid-container .services-grid-ges .services-grid-ges-text h3 {
-    padding-bottom: 5px;
-  }
-  .services-grid-container .services-grid-ext .services-grid-int-text .services-text, .services-grid-container .services-grid-ext .services-grid-ext-text .services-text, .services-grid-container .services-grid-ext .services-grid-ges-text .services-text, .services-grid-container .services-grid-int .services-grid-int-text .services-text, .services-grid-container .services-grid-int .services-grid-ext-text .services-text, .services-grid-container .services-grid-int .services-grid-ges-text .services-text, .services-grid-container .services-grid-ges .services-grid-int-text .services-text, .services-grid-container .services-grid-ges .services-grid-ext-text .services-text, .services-grid-container .services-grid-ges .services-grid-ges-text .services-text {
-    font-size: 0.9em;
+  .services-ext .services-int-text, .services-int .services-int-text, .services-ges .services-int-text {
+    order: 2; /* Ubica al texto por debajo de la imagen */
   }
 }
-/* Media query de services.html para desktops pequeños */
-@media screen and (max-width: 1150px) and (min-width: 992px) {
-  .services-grid-container .services-grid-ext, .services-grid-container .services-grid-int, .services-grid-container .services-grid-ges {
-    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+/* Media query para tablets grandes */
+@media only screen and (min-width: 675px) and (max-width: 991px) {
+  .services-ext, .services-int, .services-ges {
+    scale: 0.9;
+    padding: 25px 10px; /* Nuevo espacio lateral y entre los distintos servicios */
+  }
+  .services-ext .services-ext-img, .services-ext .services-ges-img, .services-int .services-ext-img, .services-int .services-ges-img, .services-ges .services-ext-img, .services-ges .services-ges-img {
+    /* Nueva separación de las imágenes primera y tercera (Exterior y Gestión) */
+    left: 20%;
+  }
+  .services-ext .services-int-img, .services-int .services-int-img, .services-ges .services-int-img {
+    /* Nueva separación de la imagen segunda (Interior) */
+    right: 20%;
+  }
+  .services-ext .services-ext-text, .services-ext .services-int-text, .services-ext .services-ges-text, .services-int .services-ext-text, .services-int .services-int-text, .services-int .services-ges-text, .services-ges .services-ext-text, .services-ges .services-int-text, .services-ges .services-ges-text {
+    height: 250px; /* Nueva altura del contenedor de texto */
+  }
+  .services-ext .services-ext-text, .services-ext .services-ges-text, .services-int .services-ext-text, .services-int .services-ges-text, .services-ges .services-ext-text, .services-ges .services-ges-text {
+    /* Nueva separación de los contenedores texto Exterior y Gestión */
+    right: 0;
+  }
+  .services-ext .services-int-text, .services-int .services-int-text, .services-ges .services-int-text {
+    /* Nueva separación del contenedor texto Interior */
+    left: 0;
   }
 }
-/* Desktops medianos utilizan los valores predeterminados */
-/* Media query de services.html para desktops grandes */
-@media screen and (min-width: 1501px) {
-  .services-grid-container .services-grid-ext, .services-grid-container .services-grid-int, .services-grid-container .services-grid-ges {
-    grid-template-columns: 2fr repeat(4, 1fr) 2fr;
+/* Media query para desktops grandes */
+@media only screen and (min-width: 1400px) {
+  .services-ext, .services-int, .services-ges {
+    margin: 0 10%;
   }
 }
 /* projects.html .............................................................................................. */

@@ -8,9 +8,15 @@ Comprimir imágenes para carga rápida
 Chequear el uso de etiquetas semánticas
     Index.html normalizado*************************
     us.html normalizado (falta responsive)*********
-    services.html pendiente por rediseño
+    services.html normalizado**********************
     projects.html normalizado**********************
     contact.html normalizado***********************
     success.html ya estaba normalizado*************
 Chequear comportamiento responsive
+    index.html
+    us.html
+    services.html chequeado en todos los dispositivos***
+    projects.html
+    contact.html
+    success.html
 ---------------------------------------------------------------------------
